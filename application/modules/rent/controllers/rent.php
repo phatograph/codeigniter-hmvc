@@ -7,7 +7,7 @@ class Rent extends MX_Controller {
   }
   
 	public function index() {
-		$this->load->view('index');
+	  $this->load->view('master/site');
 	}
 	
 }
