@@ -7,7 +7,8 @@ class Home extends MX_Controller {
   }
   
 	public function index() {
-		$this->load->view('index');
+	  $data['test'] = $this->db->get('home');
+		$this->load->view('index', $data);
 	}
 	
 }

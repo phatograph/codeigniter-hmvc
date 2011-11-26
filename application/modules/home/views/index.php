@@ -4,6 +4,6 @@
     <title>SBT RENTAL</title>
   </head>
   <body>
-    <h1>HOME</h1>
+    <h1><?=$test->first_row()->text?></h1>
   </body>
 </html>
