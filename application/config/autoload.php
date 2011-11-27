@@ -118,7 +118,8 @@ $autoload['language'] = array();
 */
 
 $autoload['model'] = array(
-  'authen_model'
+  'authen_model',
+  'image_model'
 );
 
 
