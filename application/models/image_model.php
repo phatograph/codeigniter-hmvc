@@ -31,7 +31,7 @@ class Image_model extends CI_Model {
       $result['success'] = 1;
     }
     else {
-      $result['error'] = array('error' => $this->upload->display_errors('<div class="error">','</div>'));
+      $result['error'] = array('error' => $this->upload->display_errors('<div class="error">', '</div>'));
     }
     return $result;
   }
