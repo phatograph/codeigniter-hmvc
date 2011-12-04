@@ -8,7 +8,12 @@ class Sell extends MX_Controller {
   }
 
 	public function index() {
-	  $data['page'] = 'sell';
+	  $data['page'] = 'sell/index';
+	  $this->load->view('master/admin', $data);
+	}
+	
+	public function add() {
+	  $data['page'] = 'sell/add';
 	  $this->load->view('master/admin', $data);
 	}
 	

@@ -1,4 +1,7 @@
-SELL backend
+SELL backend ADD
+<div>
+  <?= anchor('admin/sell', 'back') ?>
+</div>
 <?= form_open_multipart('admin/sell/post', array()); ?>
 <?= form_upload('userfile'); ?>
 <?= form_submit('submit', 'เพิ่มรูปภาพ'); ?>

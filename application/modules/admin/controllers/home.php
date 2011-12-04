@@ -14,7 +14,7 @@ class Home extends MX_Controller {
 	  $this->load->view('master/admin', $data);
 	}
 	
-	public function home_post() {
+	public function post() {
 	  $this->form_validation->set_rules('text','ข้อความ','trim|required');
     $this->form_validation->set_message('required', 'กรุณาใส่%s');
 	  
