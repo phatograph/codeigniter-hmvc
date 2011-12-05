@@ -13,6 +13,7 @@ else {
 <?= form_input('price', (isset($machine->price)) ? $machine->price : set_value('price')); ?>
 <?= form_submit('submit','Save'); ?>
 <?= form_close(); ?>
+<?php echo validation_errors(); ?>
 <?php if ($this->session->flashdata('message')) : ?>
 <?= $this->session->flashdata('message'); ?>
 <?php endif ?>

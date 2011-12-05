@@ -10,3 +10,6 @@ SELL backend
 <div>
   <?= anchor('admin/sell/add_machine', 'add machine') ?>
 </div>
+<?php if ($this->session->flashdata('message')) : ?>
+<?= $this->session->flashdata('message'); ?>
+<?php endif ?>

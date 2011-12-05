@@ -33,8 +33,6 @@ class Sell extends MX_Controller {
 	}
 	
 	public function add_machine() {
-	  $data['machine'] = null;
-	  
 	  $data['page'] = 'sell/ae_machine';
 	  $this->load->view('master/admin', $data);
 	}
@@ -47,18 +45,18 @@ class Sell extends MX_Controller {
   	    'name' => html_escape($this->input->post('name')),
   	    'price' => html_escape($this->input->post('price'))
       ));
-      //$this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'done');
   	  redirect('admin/sell');
     }
     else {
-      $this->session->set_flashdata('message', validation_errors());
-  	  redirect('admin/sell/add_machine', $this->input->post());
+  	  $data['page'] = 'sell/ae_machine';
+  	  $this->load->view('master/admin', $data);
     }
 	}
 	
 	public function edit_machine($id) {
 	  $data['machine'] = $this->db->get_where('sell', array('id' => $id))->first_row();
-	  
+
 	  $data['page'] = 'sell/ae_machine';
 	  $this->load->view('master/admin', $data);
 	}
@@ -72,11 +70,15 @@ class Sell extends MX_Controller {
         'price' => $this->input->post('price')
       ), array('id' => $id));
       $this->session->set_flashdata('message', 'done');
+  	  //redirect('admin/sell/edit_machine/' . $id);
+  	  redirect('admin/sell');
     }
     else {
-      $this->session->set_flashdata('message', validation_errors());
+  	  $data['machine']->id = $id;
+  	  
+  	  $data['page'] = 'sell/ae_machine';
+  	  $this->load->view('master/admin', $data);
     }
-	  redirect('admin/sell/edit_machine/' . $id);
   }
   
   public function delete_machine($id) {
