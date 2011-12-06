@@ -13,13 +13,15 @@ else {
 <?= form_input('price', (isset($machine->price)) ? $machine->price : set_value('price')); ?>
 <?= form_submit('submit','Save'); ?>
 <?= form_close(); ?>
+<?php if(isset($images)) : ?>
 Picture list
 <ul>
 <?php foreach($images as $i) : ?>
-  <li><img src="<?= base_url();?>images/uploaded/thumb_120x120/<?= $i->name ?>" alt="<?= $i->id ?>" /> <?= anchor('admin/sell/delete_image/' . $i->id, 'x'); ?></li>
+  <li><img src="<?= base_url();?>images/uploaded/thumb_120x120/<?= $i->name ?>" alt="<?= $i->id ?>" /> <?= anchor('admin/sell/delete_image_post/' . $i->id, 'x'); ?></li>
 <?php endforeach; ?>
 </ul>
 <?= anchor('admin/sell/add_machine_image/' . $machine->id, 'add new image of this machine'); ?>
+<?php endif; ?>
 <?php echo validation_errors(); ?>
 <?php if ($this->session->flashdata('message')) : ?>
 <?= $this->session->flashdata('message'); ?>

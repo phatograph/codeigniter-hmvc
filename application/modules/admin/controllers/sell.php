@@ -94,6 +94,16 @@ class Sell extends MX_Controller {
     }  
   }
   
+  public function delete_image_post($id) {
+    $image = $this->db->get_where('sell_image', array('id' => $id))->first_row();
+    
+    unlink('./' . $this->image_model->upload_path . $image->name);
+    unlink('./' . $this->image_model->upload_path . 'thumb_120x120/' . $image->name);
+    
+    $this->db->delete('sell_image', array('id' => $id));
+	  redirect('admin/sell/edit_machine/' . $image->sell_id);
+  }
+  
   private function set_validation_rules() {
     $this->form_validation->set_rules('name','name','trim|required');
     $this->form_validation->set_rules('price','price','trim|required|is_natural');
