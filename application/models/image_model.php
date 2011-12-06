@@ -11,28 +11,24 @@ class Image_model extends CI_Model {
 
   function add_image() {
     $result['success'] = '0';
-    $result['error'] = '';
+    $result['error'] = null;
+    $result['imagedata'] = null;
     
     if(!is_dir($this->upload_path)) {
-     mkdir($this->upload_path);
+      mkdir($this->upload_path);
     }
 
     $this->load->library('upload', $this->get_image_config());
-    if($this->upload->do_upload()) {
-      $image = $this->upload->data();
-      $data = array(
-          'image_name' => $image['file_name'],
-          'image_path' => $this->upload_path.$image['file_name'],
-      );
-      //$this->db->insert('images',$data);
     
-      $this->get_thumbnail_resize($image['file_name'], 120, 120, $image['image_width'], $image['image_height']);
-
+    if($this->upload->do_upload()) {
+      $result['image_data'] = $this->upload->data();
+      $this->get_thumbnail_resize($result['image_data']['file_name'], 120, 120, $result['image_data']['image_width'], $result['image_data']['image_height']);
       $result['success'] = 1;
     }
     else {
       $result['error'] = array('error' => $this->upload->display_errors('<div class="error">', '</div>'));
     }
+    
     return $result;
   }
 

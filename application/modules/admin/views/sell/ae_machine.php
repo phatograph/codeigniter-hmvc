@@ -16,7 +16,7 @@ else {
 Picture list
 <ul>
 <?php foreach($images as $i) : ?>
-  <li><img src="<?= $i->path ?>" alt="<?= $i->id ?>" /> <?= anchor('admin/sell/delete_image/' . $i->id, 'x'); ?></li>
+  <li><img src="<?= base_url();?>images/uploaded/thumb_120x120/<?= $i->name ?>" alt="<?= $i->id ?>" /> <?= anchor('admin/sell/delete_image/' . $i->id, 'x'); ?></li>
 <?php endforeach; ?>
 </ul>
 <?= anchor('admin/sell/add_machine_image/' . $machine->id, 'add new image of this machine'); ?>

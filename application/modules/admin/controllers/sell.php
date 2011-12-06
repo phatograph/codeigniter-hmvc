@@ -14,24 +14,6 @@ class Sell extends MX_Controller {
 	  $this->load->view('master/admin', $data);
 	}
 	
-	public function add() {
-	  $data['page'] = 'sell/add';
-	  $this->load->view('master/admin', $data);
-	}
-	
-	public function post() {
-    $result = $this->image_model->add_image();
-
-    if($result['success'] == 1) {
-      $this->session->set_flashdata('message', 'HUYA');
-      redirect('admin/sell/add');
-    }
-    else {
-      $this->session->set_flashdata('message', $result['error']['error']);
-      redirect('admin/sell/add');
-    }
-	}
-	
 	public function add_machine() {
 	  $data['page'] = 'sell/ae_machine';
 	  $this->load->view('master/admin', $data);
@@ -56,7 +38,7 @@ class Sell extends MX_Controller {
 	
 	public function edit_machine($id) {
 	  $data['machine'] = $this->db->get_where('sell', array('id' => $id))->first_row();
-	  $data['images'] = $this->db->get_where('sell_gallery', array('sell_id' => $id))->result();
+	  $data['images'] = $this->db->get_where('sell_image', array('sell_id' => $id))->result();
 
 	  $data['page'] = 'sell/ae_machine';
 	  $this->load->view('master/admin', $data);
@@ -85,6 +67,31 @@ class Sell extends MX_Controller {
   public function delete_machine($id) {
     $this->db->delete('sell', array('id' => $id));
 	  redirect('admin/sell/');
+  }
+  
+  public function add_machine_image($id) {
+    $data['machine']->id = $id;
+    
+	  $data['page'] = 'sell/a_machine_image';
+	  $this->load->view('master/admin', $data);
+  }
+  
+  public function add_machine_image_post($id) {  
+    $result = $this->image_model->add_image();
+
+    if($result['success'] == 1) {
+	    $this->db->insert('sell_image', array(
+  	    'name' => $result['image_data']['file_name'],
+  	    'path' => $result['image_data']['file_path'],
+  	    'sell_id' => $id
+      ));
+      $this->session->set_flashdata('message', 'done');
+      redirect('admin/sell/edit_machine/' . $id);
+    }
+    else {
+      $this->session->set_flashdata('message', $result['error']['error']);
+      redirect('admin/sell/add_machine_image/' . $id);
+    }  
   }
   
   private function set_validation_rules() {
