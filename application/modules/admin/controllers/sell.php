@@ -56,6 +56,7 @@ class Sell extends MX_Controller {
 	
 	public function edit_machine($id) {
 	  $data['machine'] = $this->db->get_where('sell', array('id' => $id))->first_row();
+	  $data['images'] = $this->db->get_where('sell_gallery', array('sell_id' => $id))->result();
 
 	  $data['page'] = 'sell/ae_machine';
 	  $this->load->view('master/admin', $data);

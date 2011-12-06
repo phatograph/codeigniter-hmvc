@@ -13,6 +13,13 @@ else {
 <?= form_input('price', (isset($machine->price)) ? $machine->price : set_value('price')); ?>
 <?= form_submit('submit','Save'); ?>
 <?= form_close(); ?>
+Picture list
+<ul>
+<?php foreach($images as $i) : ?>
+  <li><img src="<?= $i->path ?>" alt="<?= $i->id ?>" /> <?= anchor('admin/sell/delete_image/' . $i->id, 'x'); ?></li>
+<?php endforeach; ?>
+</ul>
+<?= anchor('admin/sell/add_machine_image/' . $machine->id, 'add new image of this machine'); ?>
 <?php echo validation_errors(); ?>
 <?php if ($this->session->flashdata('message')) : ?>
 <?= $this->session->flashdata('message'); ?>
