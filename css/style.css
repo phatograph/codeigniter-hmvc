@@ -1,0 +1,129 @@
+body {
+  font-family: Tahoma, sans-sarif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mainHeader {
+  height: 101px;
+  background-image: url('../images/shared/header_bg.jpg');
+  background-repeat: repeat-x;
+  background-position: left center;
+}
+
+.mainContainer {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.mainContainer .logo {
+  float: left;
+  width: 194px;
+  height: 101px;
+  background-image: url('../images/shared/logo.jpg');
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.mainContainer ul.mainNavigation {
+  float: right;
+  width: 750px;
+  padding-top: 28px;
+}
+.mainContainer ul.mainNavigation li {
+  display: block;
+  float: right;
+  margin-left: 10px;
+}
+.mainContainer ul.mainNavigation li a {
+  display: block;
+  height: 35px;
+  line-height: 33px;
+  background-image: none;
+  background-repeat: repeat-x;
+  background-position: left center;
+  text-decoration: none;
+  font-weight: normal;
+  padding: 0 10px;
+  border: 0px none;
+  font-size: 14px;
+}
+.mainContainer ul.mainNavigation li a:link,
+.mainContainer ul.mainNavigation li a:visited {
+  color: #ffffff;
+}
+.mainContainer ul.mainNavigation li a:hover,
+.mainContainer ul.mainNavigation li a:active,
+.mainContainer ul.mainNavigation li.selected a {
+  color: #ffffff;
+  background-image: url('../images/shared/navigation_menu_bg.jpg');
+}
+
+.welcome {
+  height: 499px;
+  background-image: url('../images/shared/welcome_bg.jpg');
+  background-repeat: repeat-x;
+  background-position: left center;
+}
+.welcome .banner {
+  height: 482px;
+  background-image: url('../images/shared/welcome_banner.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.mainContent {
+  background-color: #e8e8e8;
+}
+
+.mainContent .frontText {
+  padding: 30px 0;
+}
+.mainContent .frontText .top {
+  height: 16px;
+  background-image: url('../images/home/fronttext_top.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.mainContent .frontText .mid {
+  background-image: url('../images/home/fronttext_mid.png');
+  background-repeat: repeat-y;
+  background-position: center center;
+  padding: 10px 20px 13px;
+  text-align: center;
+}
+.mainContent .frontText .mid p {
+  font-size: 18px;
+  color: #ffffff;
+}
+.mainContent .frontText .bottom {
+  height: 14px;
+  background-image: url('../images/home/fronttext_bottom.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.mainFooter {
+  height: 96px;
+  background-image: url('../images/shared/footer_bg.jpg');
+  background-repeat: repeat-x;
+  background-position: center center;
+}
+.mainFooter .copyright {
+  text-align: right;
+  color: #959595;
+  font-size: 11px;
+  padding-top: 70px;
+}
+.mainFooter .copyright a {
+}
+.mainFooter .copyright a:link,
+.mainFooter .copyright a:visited {
+  color: #f90c55;
+}
+.mainFooter .copyright a:hover,
+.mainFooter .copyright a:active {
+  color: #f90c55;
+}
