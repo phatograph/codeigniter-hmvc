@@ -9,6 +9,7 @@ class Home extends MX_Controller {
 	public function index() {
 	  $data['text'] = $this->db->get('home')->first_row();
 	  
+	  $data['welcome'] = true;
 		$this->load->view('master/site', $data);
 	}
 	

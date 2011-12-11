@@ -10,17 +10,19 @@
         <li><?= anchor('rent', 'ราคาเช่า') ?></li>
         <li><?= anchor('sell', 'ราคาซื้อ') ?></li>
         <li><?= anchor('rent', 'ข้อมูลเครื่องจักร') ?></li>
-        <li class="selected"><?= anchor('home', 'หน้าแรก') ?></li>
+        <li><?= anchor('home', 'หน้าแรก') ?></li>
       </ul>
     </div>
   </div>
-</div>  
+</div>
+<?php if(isset($welcome)) : ?>
 <div class="welcome">
   <div class="mainContainer">
     <div class="banner">
     </div>
   </div>
 </div>
+<?php endif; ?>
 <div class="mainContent">
   <div class="mainContainer">
     <?php (empty($page)) ? $this->load->view('index') : $this->load->view($page); ?>

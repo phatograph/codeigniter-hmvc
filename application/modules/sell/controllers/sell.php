@@ -7,19 +7,25 @@ class Sell extends MX_Controller {
   }
   
 	public function index() {
-	  //$this->db->distinct();
-	  $this->db->select('s.name, si.name as siname');
+	  $this->db->select('s.id, s.name, si.id as imgid, si.name as imgname');
 	  $this->db->from('sell s');
-	  //$this->db->group_by("name"); 
-    $this->db->join('sell_image si', 'si.sell_id = s.id');
-	  $data['machines'] = $this->db->get()->result();
+    $this->db->join('sell_image si', 'si.sell_id = s.id', 'left');
+	  $query = $this->db->get()->result();
+	  
+	  $data['machines'] = array();
+	  
+	  foreach($query as $m) {
+	    $data['machines'][$m->id]->id = $m->id;
+	    $data['machines'][$m->id]->name = $m->name;
+	    if($m->imgname) {
+	      $data['machines'][$m->id]->img[$m->imgid]->imgid = $m->imgid;
+	      $data['machines'][$m->id]->img[$m->imgid]->imgname = $m->imgname;
+      }
+	  }
 	  
 	  fb($data);
 	  
-	  //$q = $this->db->query('SELECT l.id AS l__id, l.name AS l__name, t.id AS t__id, t.name AS t__name FROM sell l LEFT JOIN sell_image t ON l.id = t.sell_id');
-    //fb($q->result());
-	  
-		//$this->load->view('master/site', $data);
+		$this->load->view('master/site', $data);
 	}
 	
 }
