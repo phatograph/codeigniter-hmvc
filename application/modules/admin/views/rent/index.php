@@ -11,7 +11,8 @@ RENT backend
       <th>price_daily</th>
       <th>price_monthly_fuel</th>
       <th>price_monthly</th>
-      <th>price_monthly</th>
+      <th>note</th>
+      <th>&nbsp;</th>
     </tr>
     <?php foreach($machines->result() as $m) : ?>
     <tr>
@@ -20,7 +21,8 @@ RENT backend
       <td><?= $m->price_daily ?></td>
       <td><?= $m->price_monthly_fuel ?></td>
       <td><?= $m->price_monthly ?></td>
-      <td><?= anchor('admin/rent/edit/' . $m->id, 'edit') ?> | <?= anchor('admin/rent/delete' . $m->id, 'delete') ?></td>
+      <td><?= $m->note ?></td>
+      <td><?= anchor('admin/rent/edit_machine/' . $m->id, 'edit') ?> | <?= anchor('admin/rent/delete_machine/' . $m->id, 'delete') ?></td>
     </tr>
     <?php endforeach; ?>
   </table>

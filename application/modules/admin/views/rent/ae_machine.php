@@ -1,29 +1,26 @@
-SELL new machine
+RENT new machine
 <?php 
 if(isset($machine->id)) {
-  echo form_open('admin/sell/edit_machine_post/' . $machine->id);
+  echo form_open('admin/rent/edit_machine_post/' . $machine->id);
 }
 else {
-  echo form_open('admin/sell/add_machine_post');
+  echo form_open('admin/rent/add_machine_post');
 }
 ?>
   <?= form_label('name'); ?>
   <?= form_input('name', (isset($machine->name)) ? $machine->name : set_value('name')); ?>
-  <?= form_label('price'); ?>
-  <?= form_input('price', (isset($machine->price)) ? $machine->price : set_value('price')); ?>
+  <?= form_label('price_daily_fuel'); ?>
+  <?= form_input('price_daily_fuel', (isset($machine->price_daily_fuel)) ? $machine->price_daily_fuel : set_value('price_daily_fuel')); ?>
+  <?= form_label('price_daily'); ?>
+  <?= form_input('price_daily', (isset($machine->price_daily)) ? $machine->price_daily : set_value('price_daily')); ?>
+  <?= form_label('price_monthly_fuel'); ?>
+  <?= form_input('price_monthly_fuel', (isset($machine->price_monthly_fuel)) ? $machine->price_monthly_fuel : set_value('price_monthly_fuel')); ?>
+  <?= form_label('price_monthly'); ?>
+  <?= form_input('price_monthly', (isset($machine->price_monthly)) ? $machine->price_monthly : set_value('price_monthly')); ?>
+  <?= form_label('note'); ?>
+  <?= form_input('note', (isset($machine->note)) ? $machine->note : set_value('note')); ?>
   <?= form_submit('submit','Save'); ?>
-  <?= form_close(); ?>
-<?php if(isset($images)) : ?>
-<?php if($images) : ?>
-Picture list
-<ul>
-<?php foreach($images as $i) : ?>
-  <li><img src="<?= base_url();?>images/uploaded/thumb_120x120/<?= $i->name ?>" alt="<?= $i->id ?>" /> <?= anchor('admin/sell/delete_image_post/' . $i->id, 'x'); ?></li>
-<?php endforeach; ?>
-</ul>
-<?php endif; ?>
-<?= anchor('admin/sell/add_machine_image/' . $machine->id, 'add new image of this machine'); ?>
-<?php endif; ?>
+<?= form_close(); ?>
 <?php echo validation_errors(); ?>
 <?php if ($this->session->flashdata('message')) : ?>
 <?= $this->session->flashdata('message'); ?>
