@@ -23,8 +23,6 @@ class Sell extends MX_Controller {
       }
 	  }
 	  
-	  fb($data);
-	  
 		$this->load->view('master/site', $data);
 	}
 	

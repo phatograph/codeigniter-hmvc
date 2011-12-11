@@ -6,11 +6,11 @@
       </div>
       <ul class="mainNavigation">
         <li><?= anchor('admin/home', 'admin') ?></li>
-        <li><?= anchor('rent', 'ติดต่อเรา') ?></li>
-        <li><?= anchor('rent', 'ราคาเช่า') ?></li>
-        <li><?= anchor('sell', 'ราคาซื้อ') ?></li>
-        <li><?= anchor('rent', 'ข้อมูลเครื่องจักร') ?></li>
-        <li><?= anchor('home', 'หน้าแรก') ?></li>
+        <li class="contact"><?= anchor('rent', 'ติดต่อเรา') ?></li>
+        <li class="rent"><?= anchor('rent', 'ราคาเช่า') ?></li>
+        <li class="sell"><?= anchor('sell', 'ราคาซื้อ') ?></li>
+        <li class="info"><?= anchor('info', 'ข้อมูลเครื่องจักร') ?></li>
+        <li class="home"><?= anchor('home', 'หน้าแรก') ?></li>
       </ul>
     </div>
   </div>
