@@ -9,7 +9,19 @@ class Info extends MX_Controller {
   var $pageName = 'ข้อมูลเครื่องจักร';
   
 	public function index() {
-	  $data['posts'] = $this->db->get('info');
+	  // Pagination
+	  $config['base_url'] = base_url() . 'info/index';
+    $config['total_rows'] = $this->db->get('info')->num_rows();
+    $config['per_page'] = 10;
+    $config['num_links'] = 5;
+    $config['first_link'] = '&lt; หน้าแรก';
+    $config['prev_link'] = false;
+    $config['next_link'] = false;
+    $config['last_link'] = 'หน้าสุดท้าย &gt;';
+    $this->pagination->initialize($config);
+    $this->db->flush_cache();
+    
+	  $data['posts'] = $this->db->get('info', $config['per_page'], $this->uri->segment($this->uri->total_segments()));
     $this->db->flush_cache();
     
     $this->db->select('id, topic, views');
