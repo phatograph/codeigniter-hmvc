@@ -316,6 +316,18 @@ a:active {
   font-size: 10px;
   font-weight: normal;
 }
+.mainContent .infoContent .pagination {
+  text-align: right;
+  font-size: 12px;
+}
+.mainContent .infoContent .pagination, 
+.mainContent .infoContent .pagination a {
+  color: #000;
+}
+.mainContent .infoContent .pagination strong {
+  font-weight: bold;
+  color: #ff9202;
+}
 
 .mainFooter {
   height: 96px;
