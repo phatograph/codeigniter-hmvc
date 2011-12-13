@@ -6,8 +6,14 @@ class Rent extends MX_Controller {
     parent::__construct();
   }
   
+  var $pageName = 'ราคาเช่าเครื่องจักร';
+  
 	public function index() {
-	  $this->load->view('master/site');
+	  $data['breadcrumb'] = array(
+      $this->pageName
+    );
+    
+	  $this->load->view('master/site', $data);
 	}
 	
 }
