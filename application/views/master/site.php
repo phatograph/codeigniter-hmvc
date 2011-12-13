@@ -23,6 +23,23 @@
   </div>
 </div>
 <?php endif; ?>
+<?php if(isset($breadcrumb)) : ?>
+<div class="breadcrumb">
+  <div class="wrapper">
+    <ul class="mainContainer clearfix">
+      <li><?= anchor('/', 'หน้าแรก') ?></li>
+      <?php foreach($breadcrumb as $b) : ?>
+      <li>&gt;</li>
+      <?php if(is_array($b)) : ?>
+      <li><?= anchor($b['link'], $b['label']) ?></li>
+      <?php else : ?>
+      <li><span><?= $b ?></span></li>
+      <?php endif; ?>
+      <?php endforeach; ?>
+    </ul>
+  </div>
+</div>
+  <?php endif; ?>
 <div class="mainContent">
   <div class="mainContainer">
     <?php (empty($page)) ? $this->load->view('index') : $this->load->view($page); ?>
