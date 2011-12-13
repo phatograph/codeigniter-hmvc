@@ -9,6 +9,9 @@ class Rent extends MX_Controller {
   var $pageName = 'ราคาเช่าเครื่องจักร';
   
 	public function index() {
+	  $data['machines'] = $this->db->get('rent');
+	  fb($data['machines']->result());
+	  
 	  $data['breadcrumb'] = array(
       $this->pageName
     );
