@@ -77,7 +77,22 @@ class Info extends MX_Controller {
 	  $this->load->view('master/site', $data);
 	}
 	
-	public function search() {
+	public function search($queryString) {
+	  // Pagination
+	  $config['base_url'] = base_url() . 'info/search/' . $queryString;
+    $config['total_rows'] = $this->db->get('info')->num_rows();
+    $config['per_page'] = 20;
+    $config['num_links'] = 5;
+    $config['uri_segment'] = $this->uri->total_segments();
+    $config['first_link'] = '&lt; หน้าแรก';
+    $config['prev_link'] = false;
+    $config['next_link'] = false;
+    $config['last_link'] = 'หน้าสุดท้าย &gt;';
+    $this->pagination->initialize($config);
+    $this->db->flush_cache();
+    
+	  $data['posts'] = $this->db->get('info');
+    $this->db->flush_cache();
 	  $data['posts'] = $this->db->get('info');
 	  $this->db->flush_cache();
 	  
@@ -86,13 +101,23 @@ class Info extends MX_Controller {
     $data['posts_sort'] = $this->db->get('info');
     $this->db->flush_cache();
     
-    $queryString = $this->input->post('text');
+    // Query Search results
+	  $this->db->select('*');
+	  $this->db->like('topic', $queryString);
+	  $this->db->or_like('content', $queryString);
+	  $x = $this->uri->segment($this->uri->total_segments());
+    if(is_numeric($x)) {
+      $data['result'] = $this->db->get('info', $config['per_page'], $x);
+    }
+    else {
+      $data['result'] = $this->db->get('info', $config['per_page'], 0);
+    }
+    $this->db->flush_cache();
     
 	  $this->db->select('*');
 	  $this->db->like('topic', $queryString);
 	  $this->db->or_like('content', $queryString);
-	  $data['result'] = $this->db->get('info');
-	  
+	  $data['result_count'] = $this->db->get('info')->num_rows();
 	  $data['queryString'] = html_escape($queryString);
 
     $data['breadcrumb'] = array(
@@ -106,6 +131,10 @@ class Info extends MX_Controller {
 	  $data['page'] = 'master';
 	  $data['control'] = 'search';
 	  $this->load->view('master/site', $data);
+	}
+
+	public function search_post() {
+	  redirect('info/search/' . $this->input->post('text'));
 	}
 	
 }

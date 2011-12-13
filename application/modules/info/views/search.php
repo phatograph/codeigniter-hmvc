@@ -3,7 +3,7 @@
     <div class="box">
       <div class="boxBody">
         <div class="resultHeader">ผลการค้นหาจากคำว่า "<?= $queryString ?>"</div>
-        <div class="resultCount">พบเรื่องที่เกี่ยวข้องจำนวน <?= $result->num_rows() ?> เรื่อง</div>
+        <div class="resultCount">พบเรื่องที่เกี่ยวข้องจำนวน <?= $result_count ?> เรื่อง</div>
         <div class="resultArea">
           <?php foreach($result->result() as $r) : ?>
           <div class="line">
@@ -12,6 +12,9 @@
           <?php endforeach; ?>
         </div>
       </div>
+    </div>
+    <div class="pagination">
+      <?= $this->pagination->create_links() ?>
     </div>
   </div>
 </div>

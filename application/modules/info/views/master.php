@@ -1,7 +1,7 @@
 <div class="infoWrapper clearfix">
   <div class="infoSidebar">
     <div class="searchBox">
-      <?= form_open('info/search'); ?>
+      <?= form_open('info/search_post'); ?>
         <?php
           $v = '';
           if(isset($queryString)) {
@@ -42,6 +42,9 @@
     }
     if(isset($result)) {
       $data['result'] = $result;
+    }
+    if(isset($result_count)) {
+      $data['result_count'] = $result_count;
     }
     if(isset($queryString)) {
       $data['queryString'] = $queryString;
