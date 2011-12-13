@@ -6,6 +6,7 @@ RENT backend
   </style>
   <table>
     <tr>
+      <th>no.</th>
       <th>name</th>
       <th>price_daily_fuel</th>
       <th>price_daily</th>
@@ -14,8 +15,9 @@ RENT backend
       <th>note</th>
       <th>&nbsp;</th>
     </tr>
-    <?php foreach($machines->result() as $m) : ?>
+    <?php foreach($machines->result() as $i=>$m) : ?>
     <tr>
+      <td><?= $i+1 ?></td>
       <td><?= $m->name ?></td>
       <td><?= $m->price_daily_fuel ?></td>
       <td><?= $m->price_daily ?></td>

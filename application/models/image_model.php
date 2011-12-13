@@ -54,7 +54,7 @@ class Image_model extends CI_Model {
     $config['quality'] = '100%';
     
     if(!is_dir($thumbnail_path)) {
-     mkdir($thumbnail_path);
+      mkdir($thumbnail_path);
     }
 
     if($ix > $iy)						// the image is landscape
