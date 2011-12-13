@@ -5,6 +5,10 @@ body {
 a {
   text-decoration: none;
 }
+a:hover,
+a:active {
+  text-decoration: underline;
+}
 
 .mainHeader {
   height: 101px;
@@ -74,6 +78,41 @@ a {
   background-position: center center;
 }
 
+.breadcrumb {
+  padding-bottom: 18px;
+  background-image: url('../images/shared/breadcrumb_shadow.png');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-color: #e8e8e8;
+}
+.breadcrumb .wrapper {
+  height: 39px;
+  line-height: 39px;
+  background-image: url('../images/shared/breadcrumb_bg.jpg');
+  background-repeat: repeat-x;
+  background-position: top;
+}
+.breadcrumb ul li {
+  list-style-type: none;
+  float: left;
+  margin-right: 10px;
+  font-size: 12px;
+}
+.breadcrumb ul li a {
+  color: #000;
+}
+.breadcrumb ul li a:link,
+.breadcrumb ul li a:visited {
+  
+}
+.breadcrumb ul li a:hover,
+.breadcrumb ul li a:active {
+  text-decoration: underline;
+}
+.breadcrumb ul li span {
+  color: #fff002;
+}
+
 .mainContent {
   background-color: #e8e8e8;
 }
@@ -103,6 +142,179 @@ a {
   background-image: url('../images/home/fronttext_bottom.png');
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.mainContent .infoWrapper {
+  padding: 15px 0 30px;
+}
+
+.mainContent .infoSidebar {
+  float: left;
+  width: 170px;
+  padding-right: 10px;
+}
+.mainContent .infoSidebar .searchBox {
+  padding-bottom: 10px;
+}
+.mainContent .infoSidebar .searchBox input.searchInput {
+  border: 1px solid #7d7c7c;
+  width: 120px;
+  padding: 3px 5px;
+}
+.mainContent .infoSidebar .searchBox input.searchSubmit {
+  border: 0px solid;
+  background-color: transparent;
+  background-image: url('../images/info/magnify.png');
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 20px;
+  height: 21px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.mainContent .infoSidebar .box .header {
+  font-size: 12px;
+  font-weight: bold;
+  border-bottom: 1px solid #FFF;
+  padding-bottom: 3px;
+}
+.mainContent .infoSidebar .box .list {
+  border-top: 1px solid #b3b3b3;
+  padding: 3px 0 15px 0;
+}
+.mainContent .infoSidebar .box .list ul {
+  padding-left: 14px;
+}
+.mainContent .infoSidebar .box .list ul li {
+  list-style-type: square;
+  font-size: 12px;
+}
+.mainContent .infoSidebar .box .list ul li a {
+  color: #000;
+}
+
+.mainContent .infoContentWrapper {
+  border-left: 1px solid #fff;
+  float: left;
+  width: 779px;
+}
+.mainContent .infoContent {
+  padding-left: 10px;
+  border-left: 1px solid #b3b3b3;
+}
+.mainContent .infoContent .box {
+  padding-bottom: 10px;
+}
+
+.mainContent .infoContent .box .boxHeader {
+  height: 38px;
+  background-image: url('../images/info/infocontent_box_bg.png');
+  background-repeat: no-repeat;
+  background-position: top right;
+  color: #fff;
+  font-size: 12px;
+}
+.mainContent .infoContent .box .boxHeader .views {
+  float: right;
+  padding: 10px 30px 0 0;
+  text-align: center;
+  width: 150px;
+}
+.mainContent .infoContent .box .boxHeader .views .count {
+  color: #ff9702;
+}
+
+.mainContent .infoContent .box .boxBody {
+  background-color: #fff;
+  padding: 0 20px 20px;
+}
+
+.mainContent .infoContent .box .resultHeader,
+.mainContent .infoContent .box h2,
+.mainContent .infoContent .box h2.topic a {
+  color: #ff7b02;
+  font-size: 24px;
+}
+.mainContent .infoContent .box h2 {
+  width: 530px;
+}
+.mainContent .infoContent .box .resultHeader {
+  padding-top: 15px;
+}
+
+.mainContent .infoContent .box .resultCount,
+.mainContent .infoContent .box .date {
+  padding: 3px 0 15px;
+  color: #919191;
+  font-size: 10px;
+}
+.mainContent .infoContent .box .content .image {
+  float: left;
+  width: 130px;
+  margin-right: 20px;
+  font-size: 0px;
+  line-height: 0px;
+}
+.mainContent .infoContent .box .content .image img {
+  border: 5px solid #000;
+}
+.mainContent .infoContent .box .content .imageFull {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.mainContent .infoContent .box .content .imageFull img {
+  max-width: 718px;
+  border: 5px solid #000;
+}
+.mainContent .infoContent .box .content .text {
+  color: #505150;
+  height: 80px;
+  overflow: hidden;
+}
+.mainContent .infoContent .box .content .text * {
+  font-size: 12px !important;
+  line-height: 16px !important;
+}
+.mainContent .infoContent .box .content .textFull {
+  color: #505150;
+  font-size: 12px;
+}
+.mainContent .infoContent .box .content p {
+  margin-bottom: 16px;
+}
+.mainContent .infoContent .box .content ul,
+.mainContent .infoContent .box .content ol {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+.mainContent .infoContent .box .content .readMore {
+  background-image: url("../images/info/readmore.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+  float: right;
+  padding-left: 13px;
+  width: 68px;
+  margin-top: 20px;
+}
+.mainContent .infoContent .box .content .readMore a {
+  display: block;
+  color: #fff;
+  font-size: 12px;
+  height: 31px;
+  line-height: 28px;
+}
+.mainContent .infoContent .box .resultArea h2 {
+  display: inline;
+  font-size: 14px;
+}
+.mainContent .infoContent .box .resultArea h2 a {
+  color: #000;
+  font-weight: bold;
+}
+.mainContent .infoContent .box .resultArea h3 {
+  display: inline;
+  font-size: 10px;
+  font-weight: normal;
 }
 
 .mainFooter {
