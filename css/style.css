@@ -115,6 +115,7 @@ a:active {
 
 .mainContent {
   background-color: #e8e8e8;
+  padding-bottom: 30px;
 }
 
 .mainContent .frontText {
@@ -145,7 +146,7 @@ a:active {
 }
 
 .mainContent .infoWrapper {
-  padding: 15px 0 30px;
+  padding: 15px 0 0px;
 }
 
 .mainContent .infoSidebar {
@@ -329,9 +330,76 @@ a:active {
   color: #ff9202;
 }
 
+.mainContent .rentWrapper {
+  background-color: #fff;
+  padding: 20px;
+}
+.mainContent .rentWrapper h2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.mainContent .rentWrapper table {
+  width: 920px;
+  border-bottom: 1px solid #000;
+}
 .mainContent .rentWrapper table tr td,
 .mainContent .rentWrapper table tr th {
+  font-size: 12px;
+  padding: 2px 5px;
+}
+.mainContent .rentWrapper table tr th {
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ff9702;
   border: 1px solid #000;
+}
+.mainContent .rentWrapper table tr th.no {
+  width: 30px;
+}
+.mainContent .rentWrapper table tr th.name {
+  width: 100px;
+}
+.mainContent .rentWrapper table tr th.size {
+  width: 229px;
+}
+.mainContent .rentWrapper table tr th.note {
+  width: 150px;
+}
+.mainContent .rentWrapper table tr th.price_daily,
+.mainContent .rentWrapper table tr th.price_monthly {
+  background-color: #fabf8f;
+}
+.mainContent .rentWrapper table tr th.with_fuel,
+.mainContent .rentWrapper table tr th.without_fuel {
+  width: 40px;
+  background-color: #fde9d9;
+}
+.mainContent .rentWrapper table tr th.trans_in,
+.mainContent .rentWrapper table tr th.trans_ex {
+  width: 70px;
+  background-color: #fabf8f;
+}
+.mainContent .rentWrapper table tr td.no {
+  text-align: center;
+}
+.mainContent .rentWrapper table tr td.price_daily_fuel,
+.mainContent .rentWrapper table tr td.price_daily,
+.mainContent .rentWrapper table tr td.price_monthly_fuel,
+.mainContent .rentWrapper table tr td.price_monthly,
+.mainContent .rentWrapper table tr td.trans_in,
+.mainContent .rentWrapper table tr td.trans_ex {
+  text-align: right;
+}
+.mainContent .rentWrapper table tr.head td {
+  border-top: 1px solid #000;
+}
+.mainContent .rentWrapper table tr.child td {
+  border-top: 1px solid #ccc;
+}
+.mainContent .rentWrapper table tr td {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
 }
 
 .mainFooter {
