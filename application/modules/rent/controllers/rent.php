@@ -9,13 +9,16 @@ class Rent extends MX_Controller {
   var $pageName = 'ราคาเช่าเครื่องจักร';
   
 	public function index() {
+	  $data['rules'] = $this->db->get('rent_rule');
+    $this->db->flush_cache();
+	  
 	  $this->db->select('r.id, r.name, rs.id as rsid, rs.size, rs.price_daily_fuel, rs.price_daily, rs.price_monthly_fuel, rs.price_monthly, rs.note, rs.trans_in, rs.trans_ex');
 	  $this->db->from('rent r');
     $this->db->join('rent_size rs', 'rs.rent_id = r.id', 'left');
 	  $query = $this->db->get()->result();
+    $this->db->flush_cache();
 	  
 	  $data['sizes'] = array();
-	  
 	  
 	  foreach($query as $m) {
 	    $data['machines'][$m->id]->id = $m->id;
@@ -32,8 +35,6 @@ class Rent extends MX_Controller {
 	      $data['machines'][$m->id]->sizes[$m->rsid]->trans_ex = $m->trans_ex;
       }
 	  }
-	  
-	  fb($query);
 	  
 	  $data['breadcrumb'] = array(
       $this->pageName

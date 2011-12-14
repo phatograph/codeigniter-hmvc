@@ -9,6 +9,9 @@ class Rent extends MX_Controller {
 
 	public function index() {
 	  $data['machines'] = $this->db->get('rent');
+    $this->db->flush_cache();
+	  $data['rules'] = $this->db->get('rent_rule');
+    $this->db->flush_cache();
 	  
 	  $data['page'] = 'rent/index';
 	  $this->load->view('master/admin', $data);
@@ -37,7 +40,9 @@ class Rent extends MX_Controller {
 	
 	public function edit_machine($id) {
 	  $data['machine'] = $this->db->get_where('rent', array('id' => $id))->first_row();
+    $this->db->flush_cache();
 	  $data['sizes'] = $this->db->get_where('rent_size', array('rent_id' => $id))->result();
+    $this->db->flush_cache();
 
 	  $data['page'] = 'rent/ae_machine';
 	  $this->load->view('master/admin', $data);
@@ -138,19 +143,52 @@ class Rent extends MX_Controller {
   }
   
   public function add_rent_rule() {
-    
+	  $data['page'] = 'rent/ae_rent_rule';
+	  $this->load->view('master/admin', $data);
   }
   
-  public function add_rent_rule_post($id) {
+  public function add_rent_rule_post() {
+    $this->set_validation_rules_rule();
+
+    if($this->form_validation->run()) {
+	    $this->db->insert('rent_rule', array(
+  	    'rule' => html_escape($this->input->post('rule'))
+      ));
+      $this->session->set_flashdata('message', 'done');
+  	  redirect('admin/rent');
+    }
+    else {
+  	  $data['page'] = 'rent/ae_rent_rule';
+  	  $this->load->view('master/admin', $data);
+    }
   }
   
   public function edit_rent_rule($id) {
+	  $data['rule'] = $this->db->get_where('rent_rule', array('id' => $id))->first_row();
+
+	  $data['page'] = 'rent/ae_rent_rule';
+	  $this->load->view('master/admin', $data);
   }
   
-  public function edit_rent_rule_post($id) {
+  public function edit_rent_rule_post($id) {    
+    $this->set_validation_rules_rule();
+
+    if($this->form_validation->run()) {
+	    $this->db->update('rent_rule', array(
+  	    'rule' => html_escape($this->input->post('rule'))
+      ), array('id' => $id));
+      $this->session->set_flashdata('message', 'done');
+  	  redirect('admin/rent');
+    }
+    else {
+  	  $data['page'] = 'rent/ae_rent_rule';
+  	  $this->load->view('master/admin', $data);
+    }
   }
   
   public function delete_rent_rule($id) {
+    $this->db->delete('rent_rule', array('id' => $id));
+	  redirect('admin/rent/');
   }
 	
   private function set_validation_rules() {
@@ -169,6 +207,13 @@ class Rent extends MX_Controller {
     $this->form_validation->set_rules('note','note','trim');
     $this->form_validation->set_rules('trans_in','trans_in','trim');
     $this->form_validation->set_rules('trans_ex','trans_ex','trim');
+    
+    $this->form_validation->set_message('required', 'กรุณาใส่%s');
+    $this->form_validation->set_message('is_natural', 'กรุณาใส่ตัวเลข (มากกว่าศูนย์) เท่านั้น');
+  }
+  
+  private function set_validation_rules_rule() {
+    $this->form_validation->set_rules('rule','rule','trim|required');
     
     $this->form_validation->set_message('required', 'กรุณาใส่%s');
     $this->form_validation->set_message('is_natural', 'กรุณาใส่ตัวเลข (มากกว่าศูนย์) เท่านั้น');

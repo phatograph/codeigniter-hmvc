@@ -61,4 +61,9 @@
       <?php $ii += 1; ?>
     <?php endforeach; ?>
   </table>
+  <ol class="rentRules">
+    <?php foreach($rules->result() as $r) : ?>
+      <li><?= $r->rule ?></li>
+    <?php endforeach; ?>
+  </ol>
 </div>

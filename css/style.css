@@ -401,6 +401,13 @@ a:active {
   border-left: 1px solid #000;
   border-right: 1px solid #000;
 }
+.mainContent .rentWrapper ol.rentRules {
+  padding-top: 20px;
+}
+.mainContent .rentWrapper ol.rentRules li {
+  margin-left: 18px;
+  font-size: 12px;
+}
 
 .mainFooter {
   height: 96px;
