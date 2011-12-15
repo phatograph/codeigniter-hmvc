@@ -330,6 +330,71 @@ a:active {
   color: #ff9202;
 }
 
+/* BEGIN - Sell */
+
+.mainContent .infoContent .sellBox {
+  padding: 20px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+.mainContent .infoContent .sellBox .image {
+  font-size: 0;
+  float: left;
+  width: 342px;
+  text-align: center;
+}
+.mainContent .infoContent .sellBox .image img {
+  max-width: 332px;
+  max-height: 332px;
+  border: 5px solid #000;
+}
+.mainContent .infoContent .sellBox .image ul {
+  padding-top: 10px;
+}
+.mainContent .infoContent .sellBox .image ul li {
+  float: left;
+  width: 53px;
+  padding: 0px 2px 5px 2px;
+  list-style-type: none;
+}
+.mainContent .infoContent .sellBox .image ul li img {
+  width: 43px;
+}
+.mainContent .infoContent .sellBox .image .noImage {
+  text-align: center;
+  font-size: 11px;
+  color: #ccc;
+}
+.mainContent .infoContent .sellBox .info {
+  padding-left: 20px;
+}
+.mainContent .infoContent .sellBox .info,
+.mainContent .infoContent .sellBox .info .line {
+  float: left;
+  width: 366px;
+}
+.mainContent .infoContent .sellBox .info .line {
+  margin-bottom: 5px;
+}
+.mainContent .infoContent .sellBox .info .line .left {
+  float: left;
+  width: 100px;
+  padding: 5px 30px 5px 0;
+  text-align: right;
+  font-size: 12px;
+  font-weight: bold;
+}
+.mainContent .infoContent .sellBox .info .line .right {
+  float: left;
+  width: 216px;
+  padding: 5px 10px;
+  background-color: #ffd69d;
+  min-height: 18px;
+  font-size: 14px;
+}
+
+/* END - Sell */
+
 .mainContent .rentWrapper {
   background-color: #fff;
   padding: 20px;
@@ -395,7 +460,7 @@ a:active {
   border-top: 1px solid #000;
 }
 .mainContent .rentWrapper table tr.child td {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #ddd;
 }
 .mainContent .rentWrapper table tr td {
   border-left: 1px solid #000;
