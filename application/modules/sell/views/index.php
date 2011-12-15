@@ -1,21 +1,12 @@
 <div class="infoWrapper clearfix">
   <div class="infoSidebar">
-    <div class="searchBox">
-      <?= form_open('info/search'); ?>
-        <?php
-          $v = '';
-          if(isset($queryString)) {
-            $v = $queryString;
-          }
-          echo form_input('text', $v, 'class="searchInput"');
-        ?>
-        <?= form_submit('submit', '', 'class="searchSubmit"'); ?>
-      <?= form_close(); ?>
-    </div>
     <div class="box">
       <div class="header">ประเภทรถ</div>
       <div class="list">
         <ul>
+          <?php foreach($name->result() as $n) : ?>
+            <li><?= anchor('sell/category/' . $n->name, $n->name) ?></li>
+          <?php endforeach; ?>
         </ul>
       </div>
     </div>
@@ -23,6 +14,9 @@
       <div class="header">ยี่ห้อรถ</div>
       <div class="list">
         <ul>
+          <?php foreach($brand->result() as $b) : ?>
+            <li><?= anchor('sell/brand/' . $b->brand, $b->brand) ?></li>
+          <?php endforeach; ?>
         </ul>
       </div>
     </div>
