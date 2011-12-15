@@ -6,7 +6,7 @@
       </div>
       <ul class="mainNavigation">
         <li><?= anchor('admin/home', 'admin') ?></li>
-        <li class="contact"><?= anchor('rent', 'ติดต่อเรา') ?></li>
+        <li class="contact"><?= anchor('contactus', 'ติดต่อเรา') ?></li>
         <li class="rent"><?= anchor('rent', 'ราคาเช่า') ?></li>
         <li class="sell"><?= anchor('sell', 'ราคาซื้อ') ?></li>
         <li class="info"><?= anchor('info', 'ข้อมูลเครื่องจักร') ?></li>

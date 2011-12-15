@@ -474,6 +474,27 @@ a:active {
   font-size: 12px;
 }
 
+.mainContent .contactWrapper {
+}
+.mainContent .contactWrapper .box {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.mainContent .contactWrapper .box .map {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.mainContent .contactWrapper .box .map img {
+  max-width: 910px;
+  border: 5px solid #000;
+}
+.mainContent .contactWrapper .box .info {
+  background-color: #ffd69d;
+  padding: 10px;
+  font-size: 12px;
+}
+
 .mainFooter {
   height: 96px;
   background-image: url('../images/shared/footer_bg.jpg');

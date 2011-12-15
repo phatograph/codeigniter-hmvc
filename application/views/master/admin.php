@@ -4,6 +4,7 @@
   <li><?= anchor('admin/info', 'info') ?></li>
   <li><?= anchor('admin/rent', 'rent') ?></li>
   <li><?= anchor('admin/sell', 'sell') ?></li>
+  <li><?= anchor('admin/contactus', 'contact us') ?></li>
   <li><?= anchor('admin/authen/logout', 'logout') ?></li>
   <li><?= anchor('/', 'back to site') ?></li>
 </ul>
