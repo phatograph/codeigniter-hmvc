@@ -13,8 +13,12 @@ Contact us backend
     <?php foreach($maps->result() as $m) : ?>
     <tr>  
       <td><?= $m->info ?></td>
-      <td><img src="<?= base_url() ?>images/uploaded/thumb_120x120/<?= $m->image ?>" alt="<?= $m->image ?>"></td>
-      <td> <?= anchor('admin/contactus/edit_map_info/' . $m->id, 'edit info') ?> | <?= anchor('admin/contactus/edit_map_image/' . $m->id, 'edit map') ?> | <?= anchor('admin/info/delete_map/' . $m->id, 'delete') ?></td>
+      <td>
+        <?php if(!empty($m->image)) : ?>
+        <img src="<?= base_url() ?>images/uploaded/thumb_120x120/<?= $m->image ?>" alt="<?= $m->image ?>">
+        <?php endif; ?>
+      </td>
+      <td> <?= anchor('admin/contactus/edit_map_info/' . $m->id, 'edit info') ?> | <?= anchor('admin/contactus/edit_map_image/' . $m->id, 'edit map') ?> | <?= anchor('admin/contactus/delete_map/' . $m->id, 'delete') ?></td>
     </tr>
     <?php endforeach; ?>
   </table>

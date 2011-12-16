@@ -25,10 +25,17 @@ a:active {
 .mainContainer .logo {
   float: left;
   width: 194px;
-  height: 101px;
   background-image: url('../images/shared/logo.jpg');
   background-repeat: no-repeat;
   background-position: left center;
+  padding-top: 36px;
+  height: 65px;
+}
+
+.mainContainer .logo a {
+  text-indent: -99999px;
+  display: block;
+  height: 65px;
 }
 
 .mainContainer ul.mainNavigation {

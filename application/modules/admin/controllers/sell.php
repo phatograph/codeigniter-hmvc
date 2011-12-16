@@ -25,7 +25,11 @@ class Sell extends MX_Controller {
     if($this->form_validation->run()) {
 	    $this->db->insert('sell', array(
   	    'name' => html_escape($this->input->post('name')),
-  	    'price' => html_escape($this->input->post('price'))
+  	    'price' => html_escape($this->input->post('price')),
+  	    'brand' => html_escape($this->input->post('brand')),
+  	    'serial' => html_escape($this->input->post('serial')),
+  	    'hour' => html_escape($this->input->post('hour')),
+  	    'note' => html_escape($this->input->post('note'))
       ));
       $this->session->set_flashdata('message', 'done');
   	  redirect('admin/sell');
@@ -49,8 +53,12 @@ class Sell extends MX_Controller {
     
     if($this->form_validation->run()) {
       $this->db->update('sell', array(
-        'name' => $this->input->post('name'),
-        'price' => $this->input->post('price')
+  	    'name' => html_escape($this->input->post('name')),
+  	    'price' => html_escape($this->input->post('price')),
+  	    'brand' => html_escape($this->input->post('brand')),
+  	    'serial' => html_escape($this->input->post('serial')),
+  	    'hour' => html_escape($this->input->post('hour')),
+  	    'note' => html_escape($this->input->post('note'))
       ), array('id' => $id));
       $this->session->set_flashdata('message', 'done');
   	  //redirect('admin/sell/edit_machine/' . $id);

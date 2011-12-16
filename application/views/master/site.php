@@ -2,8 +2,7 @@
 <div class="mainHeader">
   <div class="mainContainer">
     <div class="clearfix">
-      <div class="logo">
-      </div>
+      <h1 class="logo"><?= anchor('/', 'SBT Rental') ?></h1>
       <ul class="mainNavigation">
         <li><?= anchor('admin/home', 'admin') ?></li>
         <li class="contact"><?= anchor('contactus', 'ติดต่อเรา') ?></li>

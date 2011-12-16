@@ -23,6 +23,7 @@
     </tr>
     <?php $ii = 1; ?>
     <?php $jj = 0; ?>
+    <?php if(!empty($machines)) : ?>
     <?php foreach($machines as $i => $m) : ?>
       <?php if(isset($m->sizes)) : ?>
         <?php foreach($m->sizes as $j => $s) : ?>
@@ -60,6 +61,7 @@
       <?php endif; ?>
       <?php $ii += 1; ?>
     <?php endforeach; ?>
+    <?php endif; ?>
   </table>
   <ol class="rentRules">
     <?php foreach($rules->result() as $r) : ?>

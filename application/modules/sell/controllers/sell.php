@@ -30,7 +30,9 @@ class Sell extends MX_Controller {
 	  $this->db->select('s.id, s.name, s.*, si.id as imgid, si.name as imgname');
 	  $this->db->from('sell s');
     $this->db->join('sell_image si', 'si.sell_id = s.id', 'left');
-    $this->db->where_in('s.id', $arrayOfQueriedId);
+    if(!empty($queryPagination)) {
+      $this->db->where_in('s.id', $arrayOfQueriedId);
+    }
 	  $query = $this->db->get()->result();
 	  $this->db->flush_cache();
 	  

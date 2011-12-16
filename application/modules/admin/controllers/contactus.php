@@ -90,6 +90,11 @@ class Contactus extends MX_Controller {
     }  
     redirect('admin/contactus/edit_map_image/' . $id);
 	}
+	
+	public function delete_map ($id) {
+	  $this->db->delete('contactus', array('id' => $id));
+	  redirect('admin/contactus/');
+	}
 
   private function set_validation_rules() {
     $this->form_validation->set_rules('info','info','trim|required');

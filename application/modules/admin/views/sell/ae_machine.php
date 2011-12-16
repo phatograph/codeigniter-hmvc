@@ -11,6 +11,14 @@ else {
   <?= form_input('name', (isset($machine->name)) ? $machine->name : set_value('name')); ?>
   <?= form_label('price'); ?>
   <?= form_input('price', (isset($machine->price)) ? $machine->price : set_value('price')); ?>
+  <?= form_label('brand'); ?>
+  <?= form_input('brand', (isset($machine->brand)) ? $machine->brand : set_value('brand')); ?>
+  <?= form_label('serial'); ?>
+  <?= form_input('serial', (isset($machine->serial)) ? $machine->serial : set_value('serial')); ?>
+  <?= form_label('hour'); ?>
+  <?= form_input('hour', (isset($machine->hour)) ? $machine->hour : set_value('hour')); ?>
+  <?= form_label('note'); ?>
+  <?= form_input('note', (isset($machine->note)) ? $machine->note : set_value('note')); ?>
   <?= form_submit('submit','Save'); ?>
 <?= form_close(); ?>
 <?php if(isset($images)) : ?>
