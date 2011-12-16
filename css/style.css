@@ -1,5 +1,6 @@
 body {
   font-family: Tahoma, sans-sarif;
+  background-color: #000;
 }
 
 a {
@@ -348,11 +349,27 @@ a:active {
   font-size: 0;
   float: left;
   width: 342px;
-  text-align: center;
 }
-.mainContent .infoContent .sellBox .image img {
-  max-width: 332px;
-  max-height: 332px;
+a#lightbox-nav-btnPrev,
+a#lightbox-nav-btnNext,
+#lightbox-image-details {
+  display: none !important;
+}
+.mainContent .infoContent .sellBox .image .imageHolder {
+  text-align: center;
+  width: 342px;
+}
+.mainContent .infoContent .sellBox .image .imageHolder td {
+  text-align: center;
+  height: 310px;
+  vertical-align: middle;
+  background-color: #000;
+}
+.mainContent .infoContent .sellBox .image .imageHolder img {
+  max-width: 330px;
+  max-height: 300px;
+}
+.mainContent .infoContent .sellBox .image .imageList img {
   border: 5px solid #000;
 }
 .mainContent .infoContent .sellBox .image ul {
@@ -366,6 +383,7 @@ a:active {
 }
 .mainContent .infoContent .sellBox .image ul li img {
   width: 43px;
+  cursor: pointer;
 }
 .mainContent .infoContent .sellBox .image .noImage {
   text-align: center;

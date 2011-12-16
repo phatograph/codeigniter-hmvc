@@ -27,12 +27,12 @@
       <div class="sellBox clearfix">
         <div class="image">
           <?php if(isset($m->img)) : ?>
-          <div>
-            <img src="<?= base_url() ?>images/uploaded/<?= reset($m->img)->imgname ?>" />
-          </div>
-          <ul class="clearfix">
+          <table class="imageHolder">
+            <tr><td><a href="<?= base_url() ?>images/uploaded/<?= reset($m->img)->imgname ?>"><img title="คลิกเพื่อขยาย" src="<?= base_url() ?>images/uploaded/<?= reset($m->img)->imgname ?>" /></a></td></tr>
+          </table>
+          <ul class="imageList clearfix">
             <? foreach($m->img as $i) : ?>
-             <li><img src="<?= base_url() ?>images/uploaded/thumb_120x120/<?= $i->imgname ?>" /></li>
+             <li><img src="<?= base_url() ?>images/uploaded/thumb_120x120/<?= $i->imgname ?>" rel="<?= base_url() ?>images/uploaded/<?= $i->imgname ?>" /></li>
             <? endforeach; ?>
           </ul>
           <?php else : ?>
@@ -73,3 +73,29 @@
     </div>
   </div>
 </div>
+<script type="text/javascript" charset="utf-8" src="<?= base_url() ?>script/jquery-lightbox-0.5/js/jquery.lightbox-0.5.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(function(){
+    
+    $('ul.imageList img').click(function(){
+      var self = $(this),
+          rel = self.attr('rel');
+      self
+        .parents('.image')
+          .find('a')
+            .attr('href', rel)
+            .find('img')
+              .attr('src', rel)
+              .stop().hide().fadeIn();
+    });
+    
+    $('.imageHolder a').lightBox({
+    	imageBlank: '<?= base_url() ?>script/jquery-lightbox-0.5/images/lightbox-blank.gif',
+    	imageLoading: '<?= base_url() ?>script/jquery-lightbox-0.5/images/lightbox-ico-loading.gif',
+    	imageBtnClose: '<?= base_url() ?>script/jquery-lightbox-0.5/images/lightbox-btn-close.gif',
+    	imageBtnPrev: '<?= base_url() ?>script/jquery-lightbox-0.5/images/lightbox-btn-prev.gif',
+    	imageBtnNext: '<?= base_url() ?>script/jquery-lightbox-0.5/images/lightbox-btn-next.gif'
+    });
+    
+  });
+</script>
