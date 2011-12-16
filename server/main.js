@@ -4,7 +4,7 @@
       controllerList = ['home', 'info', 'sell', 'rent', 'contact']
   ;
   
-  if(mainNavigation && ~controllerList.indexOf(controllerName) !== 0) {
+  if(mainNavigation && $.inArray(controllerName, controllerList)) {
     mainNavigation.find('li.' + controllerName).addClass('selected');
   }
   

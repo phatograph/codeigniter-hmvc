@@ -1,7 +1,7 @@
 Info edit post image
 <?php if($post->image) : ?>
 <div>
-  current image <img src="<?= base_url() ?>images/uploaded/<?= $post->image ?>" alt="<?= $post->image ?>">
+  current image <img src="<?= base_url() ?>images/uploaded/thumb_120x120/<?= $post->image ?>" alt="<?= $post->image ?>">
 </div>
 <?php endif; ?>
 <div>

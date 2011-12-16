@@ -1,3 +1,4 @@
+<div style="padding: 20px; background-color: #fff">
 <?php  $this->load->view('shared/header'); ?>
 <ul>
   <li><?= anchor('admin/home', 'home') ?></li>
@@ -11,3 +12,4 @@
 <hr />
 <?php (empty($page)) ? $this->load->view('index') : $this->load->view($page); ?>
 <?php  $this->load->view('shared/footer'); ?>
+</div>

@@ -24,7 +24,7 @@ class Authen extends MX_Controller {
       redirect('admin/home');
     }
     else {
-      $this->session->set_flashdata('message', 'FFFFFFFFUUUUUUUU');
+      $this->session->set_flashdata('message', 'login Failed');
       redirect('admin/authen');
     }
 	}

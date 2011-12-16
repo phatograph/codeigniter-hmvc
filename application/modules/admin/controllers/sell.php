@@ -73,6 +73,16 @@ class Sell extends MX_Controller {
   }
   
   public function delete_machine($id) {
+    $sell_images = $this->db->get_where('sell_image', array('sell_id' => $id))->result();
+    foreach($sell_images as $si) {
+      if(file_exists('./' . $this->image_model->upload_path . $si->name)) {
+        unlink('./' . $this->image_model->upload_path . $si->name);
+      }
+      if(file_exists('./' . $this->image_model->upload_path . 'thumb_120x120/' . $si->name)) {
+        unlink('./' . $this->image_model->upload_path . 'thumb_120x120/' . $si->name);
+      }
+    }
+    
     $this->db->delete('sell', array('id' => $id));
 	  redirect('admin/sell/');
   }
@@ -105,8 +115,12 @@ class Sell extends MX_Controller {
   public function delete_image_post($id) {
     $image = $this->db->get_where('sell_image', array('id' => $id))->first_row();
     
-    unlink('./' . $this->image_model->upload_path . $image->name);
-    unlink('./' . $this->image_model->upload_path . 'thumb_120x120/' . $image->name);
+    if(file_exists('./' . $this->image_model->upload_path . $image->name)) {
+      unlink('./' . $this->image_model->upload_path . $image->name);
+    }
+    if(file_exists('./' . $this->image_model->upload_path . 'thumb_120x120/' . $image->name)) {
+      unlink('./' . $this->image_model->upload_path . 'thumb_120x120/' . $image->name);
+    }
     
     $this->db->delete('sell_image', array('id' => $id));
 	  redirect('admin/sell/edit_machine/' . $image->sell_id);

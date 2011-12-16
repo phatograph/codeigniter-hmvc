@@ -92,6 +92,16 @@ class Contactus extends MX_Controller {
 	}
 	
 	public function delete_map ($id) {
+	  $map = $this->db->get_where('contactus', array('id' => $id))->first_row();
+    if($map->image) {
+      if(file_exists('./' . $this->image_model->upload_path . $map->image)) {
+        unlink('./' . $this->image_model->upload_path . $map->image); 
+      }
+      if(file_exists('./' . $this->image_model->upload_path . 'thumb_120x120/' . $map->image)) {
+        unlink('./' . $this->image_model->upload_path . 'thumb_120x120/' . $map->image);
+      }
+    }
+	  
 	  $this->db->delete('contactus', array('id' => $id));
 	  redirect('admin/contactus/');
 	}

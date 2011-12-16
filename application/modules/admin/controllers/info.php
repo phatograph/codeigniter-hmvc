@@ -65,6 +65,16 @@ class Info extends MX_Controller {
 	}
 
   public function delete_post($id) {
+    $post = $this->db->get_where('info', array('id' => $id))->first_row();
+    if($post->image) {
+      if(file_exists('./' . $this->image_model->upload_path . $post->image)) {
+        unlink('./' . $this->image_model->upload_path . $post->image); 
+      }
+      if(file_exists('./' . $this->image_model->upload_path . 'thumb_120x120/' . $post->image)) {
+        unlink('./' . $this->image_model->upload_path . 'thumb_120x120/' . $post->image);
+      }
+    }
+    
     $this->db->delete('info', array('id' => $id));
 	  redirect('admin/info/');
   }
