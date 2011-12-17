@@ -613,6 +613,11 @@ ul.adminNav li a:active {
   color: #FF7B02;
   padding-bottom: 20px;
 }
+.adminContent h2.secondHeader {
+  padding-top: 10px;
+  border-top: 1px solid #CCC;
+  margin-top: 20px;
+}
 .adminContent .adminTable table {
   width: 100%;
 }
@@ -661,6 +666,20 @@ ul.adminNav li a:active {
   border: 1px solid #ccc;
   padding: 5px;
   font-size: 14px;
+}
+
+ul.imageList li {
+  list-style-type: none;
+  float: left;
+  position: relative;
+  zoom: 1;
+  margin: 0 5px 5px 0;
+  font-size: 0px;
+}
+ul.imageList li .del {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
 }
 
 .submitArea {
