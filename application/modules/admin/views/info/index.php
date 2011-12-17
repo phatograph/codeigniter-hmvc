@@ -14,7 +14,7 @@
       <td><?= $p->topic ?></td>
       <td class="alc"><?= $p->created_date ?></td>
       <td class="alc"><?= $p->updated_date ?></td>
-      <td>
+      <td class="image">
         <?php if(!empty($p->image)) : ?>
           <img src="<?= base_url() ?>images/uploaded/thumb_120x120/<?= $p->image ?>" />
         <?php endif; ?>

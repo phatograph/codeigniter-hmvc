@@ -1,47 +1,38 @@
-RENT backend
-<div>
-  Machine List
-  <style type="text/css">
-    td, th { border: 1px solid #000; padding: 3px; }
-  </style>
+<h2 class="header">จัดการราคาเช่าเครื่องจักร</h2>
+<div class="adminTable">
   <table>
     <tr>
-      <th>no.</th>
-      <th>name</th>
-      <th>&nbsp;</th>
+      <th style="width: 50px">ลำดับที่</th>
+      <th>รายการ</th>
+      <th style="width: 60px">&nbsp;</th>
     </tr>
     <?php foreach($machines->result() as $i=>$m) : ?>
     <tr>
-      <td><?= $i+1 ?></td>
+      <td class="alr"><?= $i + 1 ?></td>
       <td><?= $m->name ?></td>
-      <td><?= anchor('admin/rent/edit_machine/' . $m->id, 'edit') ?> | <?= anchor('admin/rent/delete_machine/' . $m->id, 'delete') ?></td>
+      <td><?= anchor('admin/rent/edit_machine/' . $m->id, 'แก้ไข') ?> | <?= anchor('admin/rent/delete_machine/' . $m->id, 'ลบ') ?></td>
     </tr>
     <?php endforeach; ?>
   </table>
 </div>
-<div>
-  <?= anchor('admin/rent/add_machine', 'add machine') ?>
+<div class="addNewItem">
+  <?= anchor('admin/rent/add_machine', 'เพิ่มเครื่องจักร') ?>
 </div>
-<div>
-  Rule List
+<h2 class="header secondHeader">จัดการข้อตกลงการเช่า</h2>
+<div class="adminTable">
   <table>
     <tr>
-      <th>no.</th>
-      <th>rule</th>
-      <th>&nbsp;</th>
+      <th>ข้อตกลง</th>
+      <th style="width: 60px">&nbsp;</th>
     </tr>
     <?php foreach($rules->result() as $i=>$r) : ?>
     <tr>
-      <td><?= $i+1 ?></td>
       <td><?= $r->rule ?></td>
-      <td><?= anchor('admin/rent/edit_rent_rule/' . $r->id, 'edit') ?> | <?= anchor('admin/rent/delete_rent_rule/' . $r->id, 'delete') ?></td>
+      <td><?= anchor('admin/rent/edit_rent_rule/' . $r->id, 'แก้ไข') ?> | <?= anchor('admin/rent/delete_rent_rule/' . $r->id, 'ลบ', 'onclick=\'return confirm("ยืนยันการลบ");\'') ?></td>
     </tr>
     <?php endforeach; ?>
   </table>
 </div>
-<div>
-  <?= anchor('admin/rent/add_rent_rule', 'add rule') ?>
+<div class="addNewItem">
+  <?= anchor('admin/rent/add_rent_rule', 'เพิ่มข้อตกลง') ?>
 </div>
-<?php if ($this->session->flashdata('message')) : ?>
-<?= $this->session->flashdata('message'); ?>
-<?php endif ?>

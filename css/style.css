@@ -469,41 +469,41 @@ a#lightbox-nav-btnNext,
   background-color: #ff9702;
   border: 1px solid #000;
 }
-.mainContent .rentWrapper table tr th.no {
+table tr th.no {
   width: 30px;
 }
-.mainContent .rentWrapper table tr th.name {
+table tr th.name {
   width: 100px;
 }
-.mainContent .rentWrapper table tr th.size {
+table tr th.size {
   width: 229px;
 }
-.mainContent .rentWrapper table tr th.note {
+table tr th.note {
   width: 150px;
 }
-.mainContent .rentWrapper table tr th.price_daily,
-.mainContent .rentWrapper table tr th.price_monthly {
-  background-color: #fabf8f;
+table tr th.price_daily,
+table tr th.price_monthly {
+  background-color: #fabf8f !important;
 }
-.mainContent .rentWrapper table tr th.with_fuel,
-.mainContent .rentWrapper table tr th.without_fuel {
+table tr th.with_fuel,
+table tr th.without_fuel {
   width: 40px;
-  background-color: #fde9d9;
+  background-color: #fde9d9 !important;
 }
-.mainContent .rentWrapper table tr th.trans_in,
-.mainContent .rentWrapper table tr th.trans_ex {
+table tr th.trans_in,
+table tr th.trans_ex {
   width: 70px;
-  background-color: #fabf8f;
+  background-color: #fabf8f !important;
 }
-.mainContent .rentWrapper table tr td.no {
+table tr td.no {
   text-align: center;
 }
-.mainContent .rentWrapper table tr td.price_daily_fuel,
-.mainContent .rentWrapper table tr td.price_daily,
-.mainContent .rentWrapper table tr td.price_monthly_fuel,
-.mainContent .rentWrapper table tr td.price_monthly,
-.mainContent .rentWrapper table tr td.trans_in,
-.mainContent .rentWrapper table tr td.trans_ex {
+table tr td.price_daily_fuel,
+table tr td.price_daily,
+table tr td.price_monthly_fuel,
+table tr td.price_monthly,
+table tr td.trans_in,
+table tr td.trans_ex {
   text-align: right;
 }
 .mainContent .rentWrapper table tr.head td {
@@ -652,6 +652,9 @@ ul.adminNav li.logout a {
 }
 .adminContent .adminTable table td.alr {
   text-align: right;
+}
+.adminContent .adminTable table td.image {
+  font-size: 0 !important;
 }
 .adminContent .addNewItem {
   margin-top: 10px;

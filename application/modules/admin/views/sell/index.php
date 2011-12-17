@@ -1,4 +1,4 @@
-<h2 class="header">จัดการข้อมูลเครื่องจักร</h2>
+<h2 class="header">จัดการราคาซื้อเครื่องจักร</h2>
 <div class="adminTable">
   <table>
     <tr>
@@ -15,8 +15,8 @@
         <td><?= $m->name ?></td>
         <td><?= $m->brand ?></td>
         <td><?= $m->serial ?></td>
-        <td><?= $m->hour ?></td>
-        <td><?= $m->price ?></td>
+        <td class="alr"><?= $m->hour ?></td>
+        <td class="alr"><?= $m->price ?></td>
         <td><?= $m->note ?></td>
         <td class="control"><?= anchor('admin/sell/edit_machine/' . $m->id, 'แก้ไข') ?> | <?= anchor('admin/sell/delete_machine/' . $m->id, 'ลบ', 'onclick=\'return confirm("ยืนยันการลบ");\'') ?></td>
       </tr>

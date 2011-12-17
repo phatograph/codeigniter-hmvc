@@ -29,7 +29,7 @@ class Rent extends MX_Controller {
 	    $this->db->insert('rent', array(
   	    'name' => html_escape($this->input->post('name', true))
       ));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'เพิ่มข้อมูลเสร็จเรียบร้อย');
   	  redirect('admin/rent');
     }
     else {
@@ -55,7 +55,7 @@ class Rent extends MX_Controller {
       $this->db->update('rent', array(
   	    'name' => html_escape($this->input->post('name', true))
       ), array('id' => $id));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'แก้ไขข้อมูลเสร็จเรียบร้อย');
   	  //redirect('admin/sell/edit_machine/' . $id);
   	  redirect('admin/rent');
     }
@@ -94,7 +94,7 @@ class Rent extends MX_Controller {
         'trans_ex' => html_escape($this->input->post('trans_ex', true)),
         'rent_id' => $id
       ));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'เพิ่มข้อมูลเสร็จเรียบร้อย');
   	  redirect('admin/rent/edit_machine/' . $id);
     }
     else {
@@ -125,7 +125,7 @@ class Rent extends MX_Controller {
         'trans_in' => html_escape($this->input->post('trans_in', true)),
         'trans_ex' => html_escape($this->input->post('trans_ex', true))
       ), array('id' => $id));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'แก้ไขข้อมูลเสร็จเรียบร้อย');
   	  redirect('admin/rent/edit_machine/' . $this->input->post('rent_id', true));
     }
     else {
@@ -154,7 +154,7 @@ class Rent extends MX_Controller {
 	    $this->db->insert('rent_rule', array(
   	    'rule' => html_escape($this->input->post('rule', true))
       ));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'เพิ่มข้อมูลเสร็จเรียบร้อย');
   	  redirect('admin/rent');
     }
     else {
@@ -177,7 +177,7 @@ class Rent extends MX_Controller {
 	    $this->db->update('rent_rule', array(
   	    'rule' => html_escape($this->input->post('rule', true))
       ), array('id' => $id));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'แก้ไขข้อมูลเสร็จเรียบร้อย');
   	  redirect('admin/rent');
     }
     else {
@@ -192,14 +192,14 @@ class Rent extends MX_Controller {
   }
 	
   private function set_validation_rules() {
-    $this->form_validation->set_rules('name','name','trim|required');
+    $this->form_validation->set_rules('name','รายการ','trim|required');
     
     $this->form_validation->set_message('required', 'กรุณาใส่%s');
     $this->form_validation->set_message('is_natural', 'กรุณาใส่ตัวเลข (มากกว่าศูนย์) เท่านั้น');
   }
   
   private function set_validation_rules_size() {
-    $this->form_validation->set_rules('size','size','trim|required');
+    $this->form_validation->set_rules('size','ขนาดรถ','trim|required');
     $this->form_validation->set_rules('price_daily_fuel','price_daily_fuel','trim');
     $this->form_validation->set_rules('price_daily','price_daily','trim');
     $this->form_validation->set_rules('price_monthly_fuel','price_monthly_fuel','trim');
@@ -213,7 +213,7 @@ class Rent extends MX_Controller {
   }
   
   private function set_validation_rules_rule() {
-    $this->form_validation->set_rules('rule','rule','trim|required');
+    $this->form_validation->set_rules('rule','ข้อตกลง','trim|required');
     
     $this->form_validation->set_message('required', 'กรุณาใส่%s');
     $this->form_validation->set_message('is_natural', 'กรุณาใส่ตัวเลข (มากกว่าศูนย์) เท่านั้น');
