@@ -51,28 +51,45 @@ a:active {
 }
 .mainContainer ul.mainNavigation li a {
   display: block;
-  height: 35px;
-  line-height: 33px;
+  height: 34px;
+  line-height: 31px;
   background-image: none;
   background-repeat: repeat-x;
   background-position: left center;
   text-decoration: none;
   font-weight: normal;
-  padding: 0 10px;
+  float: left;
   border: 0px none;
   font-size: 14px;
 }
-.mainContainer ul.mainNavigation li a:link,
-.mainContainer ul.mainNavigation li a:visited {
+.mainContainer ul.mainNavigation li a {
   color: #ffffff;
 }
-.mainContainer ul.mainNavigation li a:hover,
-.mainContainer ul.mainNavigation li a:active,
+.mainContainer ul.mainNavigation li:hover a,
+.mainContainer ul.mainNavigation li:active a,
 .mainContainer ul.mainNavigation li.selected a {
-  color: #ffffff;
-  background-image: url('../images/shared/navigation_menu_bg.jpg');
+  background-image: url('../images/shared/navigation_menu_bg_c.jpg');
+}
+.mainContainer ul.mainNavigation li .l,
+.mainContainer ul.mainNavigation li .r {
+  height: 34px;
+  width: 13px;
+  float: left;
+  visibility: hidden;
+}
+.mainContainer ul.mainNavigation li.selected .l,
+.mainContainer ul.mainNavigation li.selected .r,
+.mainContainer ul.mainNavigation li:hover .l,
+.mainContainer ul.mainNavigation li:hover .r {
+  visibility: visible;
 }
 
+.mainContainer ul.mainNavigation li .l {
+  background-image: url('../images/shared/navigation_menu_bg_l.jpg');
+}
+.mainContainer ul.mainNavigation li .r {
+  background-image: url('../images/shared/navigation_menu_bg_r.jpg');
+}
 .welcome {
   height: 499px;
   background-image: url('../images/shared/welcome_bg.jpg');
@@ -144,6 +161,8 @@ a:active {
 }
 .mainContent .frontText .mid p {
   font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 1px;
   color: #ffffff;
 }
 .mainContent .frontText .bottom {

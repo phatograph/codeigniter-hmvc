@@ -2,7 +2,7 @@
 <script type="text/javascript" charset="utf-8">
   tinyMCE.init({
     theme : "advanced",
-    theme_advanced_buttons1 : "fontsizeselect,bold,italic,underline,strikethrough,hr,|,link,unlink,|,justifyleft,justifycenter,justifyright,|,justifyfull|,code",
+    theme_advanced_buttons1 : "fontsizeselect,bold,italic,underline,strikethrough,hr,|,link,unlink,|,justifyleft,justifycenter,justifyright,|,justifyfull,|,code",
     theme_advanced_buttons2 : "undo,redo,|,bullist,numlist,separator,outdent,indent,|,sub,sup,separator,charmap,removeformat",
     theme_advanced_buttons3 : "",
     theme_advanced_toolbar_location : "top",

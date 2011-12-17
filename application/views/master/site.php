@@ -4,12 +4,11 @@
     <div class="clearfix">
       <h1 class="logo"><?= anchor('/', 'SBT Rental') ?></h1>
       <ul class="mainNavigation">
-        <li><?= anchor('admin/home', 'admin') ?></li>
-        <li class="contact"><?= anchor('contactus', 'ติดต่อเรา') ?></li>
-        <li class="rent"><?= anchor('rent', 'ราคาเช่า') ?></li>
-        <li class="sell"><?= anchor('sell', 'ราคาซื้อ') ?></li>
-        <li class="info"><?= anchor('info', 'ข้อมูลเครื่องจักร') ?></li>
-        <li class="home"><?= anchor('home', 'หน้าแรก') ?></li>
+        <li class="contactus"><div class="l"></div><?= anchor('contactus', 'ติดต่อเรา') ?><div class="r"></div></li>
+        <li class="rent"><div class="l"></div><?= anchor('rent', 'ราคาเช่า') ?><div class="r"></div></li>
+        <li class="sell"><div class="l"></div><?= anchor('sell', 'ราคาซื้อ') ?><div class="r"></div></li>
+        <li class="info"><div class="l"></div><?= anchor('info', 'ข้อมูลเครื่องจักร') ?><div class="r"></div></li>
+        <li class="home"><div class="l"></div><?= anchor('/', 'หน้าแรก') ?><div class="r"></div></li>
       </ul>
     </div>
   </div>
