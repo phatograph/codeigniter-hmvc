@@ -566,3 +566,66 @@ a#lightbox-nav-btnNext,
 .mainFooter .copyright a:active {
   color: #f90c55;
 }
+
+/* BEGIN - Admin */
+
+.adminLogo {
+  width: 194px;
+  background-image: url('../images/shared/logo.jpg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  height: 65px;
+  margin-bottom: 10px;
+}
+.adminWrapper {
+  margin: 20px auto;
+  width: 960px;
+}
+
+ul.adminNav {
+  
+}
+ul.adminNav li {
+  list-style-type: none;
+  float: left;
+  margin-right: 5px;
+}
+ul.adminNav li a {
+  color: #000;
+  display: block;
+  padding: 10px 20px;
+  background-color: #555;
+}
+ul.adminNav li.selected a {
+  background-color: #fff;
+}
+ul.adminNav li a:hover,
+ul.adminNav li a:active {
+  background-color: #888;
+}
+
+.adminContent {
+  padding: 20px;
+  background-color: #fff;
+}
+.adminContent h2.header {
+  color: #FF7B02;
+  padding-bottom: 20px;
+}
+
+.submitArea {
+  padding-top: 20px;
+}
+
+.flashArea {
+  background-color: #fff;
+  padding: 0 20px 20px;
+}
+.flashArea .error {
+  color: #ff0000;
+}
+.flashArea .success {
+  color: #00aa00;
+}
+
+/* END - Admin */

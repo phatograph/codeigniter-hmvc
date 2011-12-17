@@ -22,12 +22,13 @@ class Home extends MX_Controller {
 	    $this->db->update('home', array(
   	    'text' => $this->input->post('text')
       ));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'ปรับแต่งเรียบร้อยแล้ว');
+  	  redirect('admin/home');
     }
     else {
-      $this->session->set_flashdata('message', validation_errors());
+      $data['page'] = 'home';
+  	  $this->load->view('master/admin', $data);
     }
-	  redirect('admin/home');
 	}
 	
 }

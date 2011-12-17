@@ -1,6 +1,7 @@
 <script type="text/javascript" charset="utf-8" src="<?= base_url() ?>script/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript" charset="utf-8">
   tinyMCE.init({
+    width: "100%",
     theme : "advanced",
     theme_advanced_buttons1 : "fontsizeselect,fontselect,|,cleanup,code",
     theme_advanced_buttons2 : "",
@@ -25,11 +26,10 @@
                     "Tahoma=tahoma,arial,helvetica,sans-serif;"
   });
 </script>
-HOME Backend
+<h2 class="header">ปรับแต่งหน้าแรก</h2>
 <?= form_open('admin/home/post'); ?>
-<?= form_textarea('text', $text->text); ?>
-<?= form_submit('submit','Save'); ?>
+<?= form_textarea('text', (isset($text->text)) ? $text->text : set_value('text')); ?>
+<div class="submitArea">
+  <?= form_submit('submit','Save'); ?>
+</div>
 <?= form_close(); ?>
-<?php if ($this->session->flashdata('message')) : ?>
-<?= $this->session->flashdata('message'); ?>
-<?php endif ?>
