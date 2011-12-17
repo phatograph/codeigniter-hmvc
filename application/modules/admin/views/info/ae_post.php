@@ -12,7 +12,6 @@
     mode: "textareas"
   });
 </script>
-
 <div class="adminForm">
 <?php 
 if(isset($post->id)) {

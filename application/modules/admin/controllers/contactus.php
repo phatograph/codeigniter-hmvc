@@ -26,7 +26,7 @@ class Contactus extends MX_Controller {
 	    $this->db->insert('contactus', array(
   	    'info' => $this->input->post('info')
       ));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'เพิ่มข้อมูลเสร็จเรียบร้อย');
   	  redirect('admin/contactus');
     }
     else {
@@ -50,7 +50,7 @@ class Contactus extends MX_Controller {
 	    $this->db->update('contactus', array(
   	    'info' => $this->input->post('info')
       ), array('id' => $id));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'แก้ไขข้อมูลเสร็จเรียบร้อย');
   	  redirect('admin/contactus');
     }
     else {
@@ -83,7 +83,7 @@ class Contactus extends MX_Controller {
 	    $this->db->update('contactus', array(
   	    'image' => $result['image_data']['file_name']
       ), array('id' => $id));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'แก้ไขภาพเสร็จเรียบร้อย');
     }
     else {
       $this->session->set_flashdata('message', $result['error']['error']);
@@ -107,7 +107,7 @@ class Contactus extends MX_Controller {
 	}
 
   private function set_validation_rules() {
-    $this->form_validation->set_rules('info','info','trim|required');
+    $this->form_validation->set_rules('info', 'ที่อยู่', 'trim|required');
 
     $this->form_validation->set_message('required', 'กรุณาใส่%s');
     $this->form_validation->set_message('is_natural', 'กรุณาใส่ตัวเลข (มากกว่าศูนย์) เท่านั้น');

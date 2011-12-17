@@ -16,11 +16,11 @@
       ใช้ภาพใหม่
     </div>
     <div>
-        <?= form_upload('userfile', '', 'size="50"'); ?>
+      <?= form_upload('userfile', '', 'size="50"'); ?>
     </div>
   </div>
   <div class="submitArea">
-    <?= form_submit('submit','Save'); ?>
+    <?= form_submit('submit', 'Save'); ?>
     <?= anchor('admin/info', 'กลับไปหน้าข้อมูลเครื่องจักร') ?>
   </div>
 <?= form_close(); ?>

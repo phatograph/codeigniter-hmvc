@@ -728,4 +728,30 @@ ul.adminNav li.logout a {
   color: #00aa00;
 }
 
+.authenWrapper {
+  margin: 0 auto;
+  width: 300px;
+}
+.authenWrapper .logo {
+  background-image: url('../images/shared/logo.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 65px;
+  text-indent: -99999px;
+}
+.authenWrapper h3 {
+  color: #FF7B02;
+  padding: 10px 0 10px;
+  text-align: center;
+}
+.authenWrapper .line .key {
+  padding-bottom: 10px;
+}
+.authenWrapper .line .value input {
+  border: 1px solid #CCCCCC;
+  font-size: 14px;
+  padding: 5px;
+  width: 288px;
+}
+
 /* END - Admin */

@@ -7,6 +7,7 @@ class Authen extends MX_Controller {
   }
 	
 	public function index() {
+	  $data['hide'] = true;
 	  $data['page'] = 'authen';
 	  $this->load->view('master/admin', $data);
 	}
@@ -24,7 +25,7 @@ class Authen extends MX_Controller {
       redirect('admin/home');
     }
     else {
-      $this->session->set_flashdata('message', 'login Failed');
+      $this->session->set_flashdata('loginerror', 'Username และ/หรือ Password ไม่ถูกต้อง');
       redirect('admin/authen');
     }
 	}

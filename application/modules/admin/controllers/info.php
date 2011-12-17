@@ -105,7 +105,7 @@ class Info extends MX_Controller {
   	    'updated_date' => standard_date('DATE_W3C', time()),
   	    'image' => $result['image_data']['file_name']
       ), array('id' => $id));
-      $this->session->set_flashdata('message', 'แก้ไขภาพเรียบร้อยแล้ว');
+      $this->session->set_flashdata('message', 'แก้ไขภาพเสร็จเรียบร้อย');
     }
     else {
       $this->session->set_flashdata('message', $result['error']['error']);
