@@ -1,6 +1,6 @@
 body {
   font-family: Tahoma, sans-sarif;
-  background-color: #000;
+  background-color: #202020;
 }
 
 a {
@@ -96,9 +96,15 @@ a:active {
   background-repeat: repeat-x;
   background-position: left center;
 }
-.welcome .banner {
-  height: 482px;
-  background-image: url('../images/shared/welcome_banner.png');
+.welcome .bannerText {
+  height: 114px;
+  background-image: url('../images/shared/welcome_banner_text.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.welcome .bannerImage {
+  height: 368px;
+  background-image: url('../images/shared/welcome_banner_image.png');
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -160,9 +166,8 @@ a:active {
   text-align: center;
 }
 .mainContent .frontText .mid p {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: normal;
-  letter-spacing: 1px;
   color: #ffffff;
 }
 .mainContent .frontText .bottom {

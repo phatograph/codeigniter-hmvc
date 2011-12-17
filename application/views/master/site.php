@@ -16,8 +16,8 @@
 <?php if(isset($welcome)) : ?>
 <div class="welcome">
   <div class="mainContainer">
-    <div class="banner">
-    </div>
+    <div class="bannerText"></div>
+    <div class="bannerImage"></div>
   </div>
 </div>
 <?php endif; ?>
