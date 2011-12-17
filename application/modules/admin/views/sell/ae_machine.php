@@ -64,8 +64,8 @@
   <?= form_close(); ?>
 </div>
 <?php if(isset($images)) : ?>
-<?php if($images) : ?>
 <h2 class="header secondHeader">ภาพเครื่องจักร</h2>
+<?php if($images) : ?>
 <ul class="imageList clearfix">
 <?php foreach($images as $i) : ?>
   <li>
@@ -74,6 +74,8 @@
   </li>
 <?php endforeach; ?>
 </ul>
+<?php else : ?>
+  <div class="noImage">ยังไม่มีรูปภาพ</div>
 <?php endif; ?>
 <div class="addNewItem">
   <?= anchor('admin/sell/add_machine_image/' . $machine->id, 'เพิ่มรูปภาพเครื่องจักร'); ?>

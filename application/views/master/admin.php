@@ -4,10 +4,10 @@
     <li class="home"><?= anchor('admin/home', 'หน้าแรก') ?></li>
     <li class="info"><?= anchor('admin/info', 'ข้อมูลเครื่องจักร') ?></li>
     <li class="sell"><?= anchor('admin/sell', 'ราคาซื้อ') ?></li>
-    <li class="rent"><?= anchor('admin/rent', 'rent') ?></li>
-    <li class="contactus"><?= anchor('admin/contactus', 'contact us') ?></li>
-    <li class="logout"><?= anchor('admin/authen/logout', 'logout') ?></li>
-    <li class="back"><?= anchor('/', 'back to site') ?></li>
+    <li class="rent"><?= anchor('admin/rent', 'ราคาเช่า') ?></li>
+    <li class="contactus"><?= anchor('admin/contactus', 'ติดต่อเรา') ?></li>
+    <li class="back"><?= anchor('/', 'กลับไปที่หน้าหลัก') ?></li>
+    <li class="logout"><?= anchor('admin/authen/logout', 'ออกจากระบบ') ?></li>
   </ul>
   <div class="adminContent">
     <?php (empty($page)) ? $this->load->view('index') : $this->load->view($page); ?>

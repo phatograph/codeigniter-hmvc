@@ -604,6 +604,12 @@ ul.adminNav li a:hover,
 ul.adminNav li a:active {
   background-color: #888;
 }
+ul.adminNav li.back a {
+  background-color: #66aa66 !important;
+}
+ul.adminNav li.logout a {
+  background-color: #aa6666 !important;
+}
 
 .adminContent {
   padding: 20px;
@@ -668,7 +674,7 @@ ul.adminNav li a:active {
   font-size: 14px;
 }
 
-ul.imageList li {
+.adminContent ul.imageList li {
   list-style-type: none;
   float: left;
   position: relative;
@@ -676,10 +682,17 @@ ul.imageList li {
   margin: 0 5px 5px 0;
   font-size: 0px;
 }
-ul.imageList li .del {
+.adminContent ul.imageList li .del {
   position: absolute;
   bottom: 2px;
   right: 2px;
+}
+
+.adminContent .noImage {
+  color: #CCCCCC;
+  font-size: 11px;
+  text-align: center;
+  padding: 0 0 10px;
 }
 
 .submitArea {
@@ -702,7 +715,8 @@ ul.imageList li .del {
 
 .flashArea {
   background-color: #fff;
-  padding: 0 20px 20px;
+  padding: 20px 20px 20px;
+  border-top: 3px solid #202020;
 }
 .flashArea .error {
   color: #ff0000;

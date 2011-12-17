@@ -31,7 +31,7 @@ class Sell extends MX_Controller {
   	    'hour' => html_escape($this->input->post('hour', true)),
   	    'note' => html_escape($this->input->post('note', true))
       ));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'เพิ่มข้อมูลเสร็จเรียบร้อย');
   	  redirect('admin/sell');
     }
     else {
@@ -60,7 +60,7 @@ class Sell extends MX_Controller {
   	    'hour' => html_escape($this->input->post('hour', true)),
   	    'note' => html_escape($this->input->post('note', true))
       ), array('id' => $id));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'แก้ไขข้อมูลเสร็จเรียบร้อย');
   	  //redirect('admin/sell/edit_machine/' . $id);
   	  redirect('admin/sell');
     }
@@ -103,7 +103,7 @@ class Sell extends MX_Controller {
   	    'path' => $result['image_data']['file_path'],
   	    'sell_id' => $id
       ));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'เพิ่มรูปภาพเสร็จเรียบร้อย');
       redirect('admin/sell/edit_machine/' . $id);
     }
     else {
@@ -127,10 +127,10 @@ class Sell extends MX_Controller {
   }
   
   private function set_validation_rules() {
-    $this->form_validation->set_rules('name','name','trim|required');
-    $this->form_validation->set_rules('price','price','trim|required|is_natural');
+    $this->form_validation->set_rules('name','ประเภทรถ','trim|required');
+    $this->form_validation->set_rules('price','ราคา','trim|required|is_natural');
     $this->form_validation->set_message('required', 'กรุณาใส่%s');
-    $this->form_validation->set_message('is_natural', 'กรุณาใส่ตัวเลข (มากกว่าศูนย์) เท่านั้น');
+    $this->form_validation->set_message('is_natural', 'กรุณาใส่ตัวเลข%s (มากกว่าศูนย์) เท่านั้น');
   }
 	
 }
