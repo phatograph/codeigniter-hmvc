@@ -30,7 +30,7 @@ class Info extends MX_Controller {
   	    'created_date' => standard_date('DATE_W3C', time()),
   	    'updated_date' => standard_date('DATE_W3C', time())
       ));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'เพิ่มข้อมูลเสร็จเรียบร้อย');
   	  redirect('admin/info');
     }
     else {
@@ -55,7 +55,7 @@ class Info extends MX_Controller {
   	    'content' => $this->input->post('content'),
   	    'updated_date' => standard_date('DATE_W3C', time())
       ), array('id' => $id));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'แก้ไขข้อมูลเสร็จเรียบร้อย');
   	  redirect('admin/info');
     }
     else {
@@ -76,6 +76,7 @@ class Info extends MX_Controller {
     }
     
     $this->db->delete('info', array('id' => $id));
+    $this->session->set_flashdata('message', 'ลบข้อมูลเสร็จเรียบร้อย');
 	  redirect('admin/info/');
   }
 
@@ -104,7 +105,7 @@ class Info extends MX_Controller {
   	    'updated_date' => standard_date('DATE_W3C', time()),
   	    'image' => $result['image_data']['file_name']
       ), array('id' => $id));
-      $this->session->set_flashdata('message', 'done');
+      $this->session->set_flashdata('message', 'แก้ไขภาพเรียบร้อยแล้ว');
     }
     else {
       $this->session->set_flashdata('message', $result['error']['error']);
@@ -113,8 +114,8 @@ class Info extends MX_Controller {
   }
 	
   private function set_validation_rules() {
-    $this->form_validation->set_rules('topic','topic','trim|required');
-    $this->form_validation->set_rules('content','content','trim|required');
+    $this->form_validation->set_rules('topic','หัวข้อ','trim|required');
+    $this->form_validation->set_rules('content','เนื้อหา','trim|required');
     
     $this->form_validation->set_message('required', 'กรุณาใส่%s');
     $this->form_validation->set_message('is_natural', 'กรุณาใส่ตัวเลข (มากกว่าศูนย์) เท่านั้น');

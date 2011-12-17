@@ -2,9 +2,9 @@
 <div class="adminWrapper">
   <ul class="adminNav clearfix">
     <li class="home"><?= anchor('admin/home', 'หน้าแรก') ?></li>
-    <li class="info"><?= anchor('admin/info', 'info') ?></li>
+    <li class="info"><?= anchor('admin/info', 'ข้อมูลเครื่องจักร') ?></li>
+    <li class="sell"><?= anchor('admin/sell', 'ราคาซื้อ') ?></li>
     <li class="rent"><?= anchor('admin/rent', 'rent') ?></li>
-    <li class="sell"><?= anchor('admin/sell', 'sell') ?></li>
     <li class="contactus"><?= anchor('admin/contactus', 'contact us') ?></li>
     <li class="logout"><?= anchor('admin/authen/logout', 'logout') ?></li>
     <li class="back"><?= anchor('/', 'back to site') ?></li>

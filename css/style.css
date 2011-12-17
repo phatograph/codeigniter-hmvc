@@ -5,6 +5,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #000;
 }
 a:hover,
 a:active {
@@ -597,7 +598,7 @@ ul.adminNav li a {
   background-color: #555;
 }
 ul.adminNav li.selected a {
-  background-color: #fff;
+  background-color: #fff !important;
 }
 ul.adminNav li a:hover,
 ul.adminNav li a:active {
@@ -612,9 +613,72 @@ ul.adminNav li a:active {
   color: #FF7B02;
   padding-bottom: 20px;
 }
+.adminContent .adminTable table {
+  width: 100%;
+}
+.adminContent .adminTable table th,
+.adminContent .adminTable table td {
+  border: 1px solid #000;
+  padding: 2px 5px;
+}
+.adminContent .adminTable table th {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #FF9702;
+  vertical-align: middle;
+}
+.adminContent .adminTable table td,
+.adminContent .adminTable table td * {
+  font-size: 12px !important;
+  font-weight: normal;
+}
+.adminContent .adminTable table td.control {
+  text-align: center;
+}
+.adminContent .adminTable table td.alc {
+  text-align: center;
+}
+.adminContent .adminTable table td.alr {
+  text-align: right;
+}
+.adminContent .addNewItem {
+  margin-top: 10px;
+  padding: 5px 0;
+  text-align: center;
+  background-color: #ccc;
+}
+.adminContent .adminForm {
+  
+}
+.adminContent .adminForm .line {
+  padding-bottom: 10px;
+}
+.adminContent .adminForm .line .key {
+  padding-bottom: 5px;
+}
+.adminContent .adminForm .line .value input {
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 14px;
+}
 
 .submitArea {
   padding-top: 20px;
+}
+.submitArea a {
+  font-size: 12px;
+}
+.submitArea input {
+  border: 1px solid #aaa;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #eee;
+  margin-right: 10px;
+}
+.submitArea input:hover {
+  background-color: #ccc;
 }
 
 .flashArea {
