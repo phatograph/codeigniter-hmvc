@@ -9,7 +9,19 @@
     theme_advanced_toolbar_align : "left",
     theme_advanced_statusbar_location : "bottom",
     mode: "textareas",
-    theme_advanced_fonts : "Ms Sans Serif=ms sans-serif,sans-serif;"+
+    theme_advanced_fonts :
+                    "Angsana=Angsana New,AngsanaUPC;"+
+                    "Arial=Arial;"+
+                    "Browallia=Browallia New,BrowalliaUPC;"+
+                    "Cordia=Cordia New,CordiaUPC;"+
+                    "Dillenia=DilleniaUPC;"+
+                    "Eucrosia=EucrosiaUPC;"+
+                    "Freesia=FreesiaUPC;"+
+                    "Iris=IrisUPC;"+
+                    "Jasmine=JasmineUPC;"+
+                    "Kodchiang=KodchiangUPC;"+
+                    "Lily=LilyUPC;"+
+                    "Ms Sans Serif=Microsoft Sans Serif,ms sans-serif,sans-serif;"+
                     "Tahoma=tahoma,arial,helvetica,sans-serif;"
   });
 </script>
