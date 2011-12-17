@@ -12,12 +12,12 @@ class Authen extends MX_Controller {
 	}
 	
 	public function login_post() {
-    $this->db->where('username', $this->input->post('username'));
-    $this->db->where('password', md5($this->input->post('password')));
+    $this->db->where('username', $this->input->post('username', true));
+    $this->db->where('password', md5($this->input->post('password', true)));
     
     if($this->db->get('user')->num_rows() == 1) {
 	    $data = array(
-        'username' => $this->input->post('username'),
+        'username' => $this->input->post('username', true),
         'is_signed_in' => true
       );
       $this->session->set_userdata($data);

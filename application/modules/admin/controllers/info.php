@@ -25,7 +25,7 @@ class Info extends MX_Controller {
 
     if($this->form_validation->run()) {
 	    $this->db->insert('info', array(
-  	    'topic' => html_escape($this->input->post('topic')),
+  	    'topic' => html_escape($this->input->post('topic', true)),
   	    'content' => $this->input->post('content'),
   	    'created_date' => standard_date('DATE_W3C', time()),
   	    'updated_date' => standard_date('DATE_W3C', time())
@@ -51,7 +51,7 @@ class Info extends MX_Controller {
 
     if($this->form_validation->run()) {
 	    $this->db->update('info', array(
-  	    'topic' => html_escape($this->input->post('topic')),
+  	    'topic' => html_escape($this->input->post('topic', true)),
   	    'content' => $this->input->post('content'),
   	    'updated_date' => standard_date('DATE_W3C', time())
       ), array('id' => $id));

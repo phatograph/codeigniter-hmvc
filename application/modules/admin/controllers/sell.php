@@ -24,12 +24,12 @@ class Sell extends MX_Controller {
 	  
     if($this->form_validation->run()) {
 	    $this->db->insert('sell', array(
-  	    'name' => html_escape($this->input->post('name')),
-  	    'price' => html_escape($this->input->post('price')),
-  	    'brand' => html_escape($this->input->post('brand')),
-  	    'serial' => html_escape($this->input->post('serial')),
-  	    'hour' => html_escape($this->input->post('hour')),
-  	    'note' => html_escape($this->input->post('note'))
+  	    'name' => html_escape($this->input->post('name', true)),
+  	    'price' => html_escape($this->input->post('price', true)),
+  	    'brand' => html_escape($this->input->post('brand', true)),
+  	    'serial' => html_escape($this->input->post('serial', true)),
+  	    'hour' => html_escape($this->input->post('hour', true)),
+  	    'note' => html_escape($this->input->post('note', true))
       ));
       $this->session->set_flashdata('message', 'done');
   	  redirect('admin/sell');
@@ -53,12 +53,12 @@ class Sell extends MX_Controller {
     
     if($this->form_validation->run()) {
       $this->db->update('sell', array(
-  	    'name' => html_escape($this->input->post('name')),
-  	    'price' => html_escape($this->input->post('price')),
-  	    'brand' => html_escape($this->input->post('brand')),
-  	    'serial' => html_escape($this->input->post('serial')),
-  	    'hour' => html_escape($this->input->post('hour')),
-  	    'note' => html_escape($this->input->post('note'))
+  	    'name' => html_escape($this->input->post('name', true)),
+  	    'price' => html_escape($this->input->post('price', true)),
+  	    'brand' => html_escape($this->input->post('brand', true)),
+  	    'serial' => html_escape($this->input->post('serial', true)),
+  	    'hour' => html_escape($this->input->post('hour', true)),
+  	    'note' => html_escape($this->input->post('note', true))
       ), array('id' => $id));
       $this->session->set_flashdata('message', 'done');
   	  //redirect('admin/sell/edit_machine/' . $id);

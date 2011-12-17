@@ -27,7 +27,7 @@ class Rent extends MX_Controller {
 
     if($this->form_validation->run()) {
 	    $this->db->insert('rent', array(
-  	    'name' => html_escape($this->input->post('name'))
+  	    'name' => html_escape($this->input->post('name', true))
       ));
       $this->session->set_flashdata('message', 'done');
   	  redirect('admin/rent');
@@ -53,7 +53,7 @@ class Rent extends MX_Controller {
 
     if($this->form_validation->run()) {
       $this->db->update('rent', array(
-  	    'name' => html_escape($this->input->post('name'))
+  	    'name' => html_escape($this->input->post('name', true))
       ), array('id' => $id));
       $this->session->set_flashdata('message', 'done');
   	  //redirect('admin/sell/edit_machine/' . $id);
@@ -84,14 +84,14 @@ class Rent extends MX_Controller {
 
     if($this->form_validation->run()) {
 	    $this->db->insert('rent_size', array(
-  	    'size' => html_escape($this->input->post('size')),
-  	    'price_daily_fuel' => html_escape($this->input->post('price_daily_fuel')),
-        'price_daily' => html_escape($this->input->post('price_daily')),
-        'price_monthly_fuel' => html_escape($this->input->post('price_monthly_fuel')),
-        'price_monthly' => html_escape($this->input->post('price_monthly')),
-        'note' => html_escape($this->input->post('note')),
-        'trans_in' => html_escape($this->input->post('trans_in')),
-        'trans_ex' => html_escape($this->input->post('trans_ex')),
+  	    'size' => html_escape($this->input->post('size', true)),
+  	    'price_daily_fuel' => html_escape($this->input->post('price_daily_fuel', true)),
+        'price_daily' => html_escape($this->input->post('price_daily', true)),
+        'price_monthly_fuel' => html_escape($this->input->post('price_monthly_fuel', true)),
+        'price_monthly' => html_escape($this->input->post('price_monthly', true)),
+        'note' => html_escape($this->input->post('note', true)),
+        'trans_in' => html_escape($this->input->post('trans_in', true)),
+        'trans_ex' => html_escape($this->input->post('trans_ex', true)),
         'rent_id' => $id
       ));
       $this->session->set_flashdata('message', 'done');
@@ -116,17 +116,17 @@ class Rent extends MX_Controller {
 
     if($this->form_validation->run()) {
 	    $this->db->update('rent_size', array(
-  	    'size' => html_escape($this->input->post('size')),
-  	    'price_daily_fuel' => html_escape($this->input->post('price_daily_fuel')),
-        'price_daily' => html_escape($this->input->post('price_daily')),
-        'price_monthly_fuel' => html_escape($this->input->post('price_monthly_fuel')),
-        'price_monthly' => html_escape($this->input->post('price_monthly')),
-        'note' => html_escape($this->input->post('note')),
-        'trans_in' => html_escape($this->input->post('trans_in')),
-        'trans_ex' => html_escape($this->input->post('trans_ex'))
+  	    'size' => html_escape($this->input->post('size', true)),
+  	    'price_daily_fuel' => html_escape($this->input->post('price_daily_fuel', true)),
+        'price_daily' => html_escape($this->input->post('price_daily', true)),
+        'price_monthly_fuel' => html_escape($this->input->post('price_monthly_fuel', true)),
+        'price_monthly' => html_escape($this->input->post('price_monthly', true)),
+        'note' => html_escape($this->input->post('note', true)),
+        'trans_in' => html_escape($this->input->post('trans_in', true)),
+        'trans_ex' => html_escape($this->input->post('trans_ex', true))
       ), array('id' => $id));
       $this->session->set_flashdata('message', 'done');
-  	  redirect('admin/rent/edit_machine/' . $this->input->post('rent_id'));
+  	  redirect('admin/rent/edit_machine/' . $this->input->post('rent_id', true));
     }
     else {
       $data['machine_id'] = $id;
@@ -152,7 +152,7 @@ class Rent extends MX_Controller {
 
     if($this->form_validation->run()) {
 	    $this->db->insert('rent_rule', array(
-  	    'rule' => html_escape($this->input->post('rule'))
+  	    'rule' => html_escape($this->input->post('rule', true))
       ));
       $this->session->set_flashdata('message', 'done');
   	  redirect('admin/rent');
@@ -175,7 +175,7 @@ class Rent extends MX_Controller {
 
     if($this->form_validation->run()) {
 	    $this->db->update('rent_rule', array(
-  	    'rule' => html_escape($this->input->post('rule'))
+  	    'rule' => html_escape($this->input->post('rule', true))
       ), array('id' => $id));
       $this->session->set_flashdata('message', 'done');
   	  redirect('admin/rent');

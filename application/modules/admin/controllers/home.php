@@ -20,7 +20,7 @@ class Home extends MX_Controller {
 	  
     if($this->form_validation->run()) {
 	    $this->db->update('home', array(
-  	    'text' => html_escape($this->input->post('text', TRUE))
+  	    'text' => $this->input->post('text')
       ));
       $this->session->set_flashdata('message', 'done');
     }
