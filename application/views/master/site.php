@@ -45,7 +45,7 @@
 </div>
 <div class="mainFooter">
   <div class="mainContainer">
-    <div class="copyright">Copyright © 2011 - <?= anchor('http://phatograph.com', 'phatograph.com'); ?> - All rights reserved</div>
+    <div class="copyright">Powered by <?= anchor('http://phatograph.com', 'phatograph.com'); ?></div>
   </div>
 </div>
 <?php $this->load->view('shared/footer'); ?>

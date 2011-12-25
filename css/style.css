@@ -675,6 +675,7 @@ ul.adminNav li.logout a {
   border: 1px solid #ccc;
   padding: 5px;
   font-size: 14px;
+  width: 300px;
 }
 
 .adminContent ul.imageList li {

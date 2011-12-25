@@ -22,6 +22,3 @@
 <div class="addNewItem">
   <?= anchor('admin/contactus/add_map', 'เพิ่มข้อมูลติดต่อเรา') ?>
 </div>
-<?php if ($this->session->flashdata('message')) : ?>
-<?= $this->session->flashdata('message'); ?>
-<?php endif ?>

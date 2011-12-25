@@ -103,6 +103,7 @@ class Contactus extends MX_Controller {
     }
 	  
 	  $this->db->delete('contactus', array('id' => $id));
+    $this->session->set_flashdata('message', 'ลบข้อมูลเสร็จเรียบร้อย');
 	  redirect('admin/contactus/');
 	}
 

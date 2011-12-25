@@ -69,6 +69,7 @@ class Rent extends MX_Controller {
 
   public function delete_machine($id) {
     $this->db->delete('rent', array('id' => $id));
+    $this->session->set_flashdata('message', 'ลบข้อมูลเสร็จเรียบร้อย');
 	  redirect('admin/rent/');
   }
   
@@ -139,6 +140,7 @@ class Rent extends MX_Controller {
     $size = $this->db->get_where('rent_size', array('id' => $id))->first_row();
 
     $this->db->delete('rent_size', array('id' => $id));
+    $this->session->set_flashdata('message', 'ลบข้อมูลเสร็จเรียบร้อย');
 	  redirect('admin/rent/edit_machine/' . $size->rent_id);
   }
   
@@ -188,6 +190,7 @@ class Rent extends MX_Controller {
   
   public function delete_rent_rule($id) {
     $this->db->delete('rent_rule', array('id' => $id));
+    $this->session->set_flashdata('message', 'ลบข้อมูลเสร็จเรียบร้อย');
 	  redirect('admin/rent/');
   }
 	

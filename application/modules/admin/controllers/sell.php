@@ -84,6 +84,7 @@ class Sell extends MX_Controller {
     }
     
     $this->db->delete('sell', array('id' => $id));
+    $this->session->set_flashdata('message', 'ลบข้อมูลเสร็จเรียบร้อย');
 	  redirect('admin/sell/');
   }
   
@@ -123,11 +124,13 @@ class Sell extends MX_Controller {
     }
     
     $this->db->delete('sell_image', array('id' => $id));
+    $this->session->set_flashdata('message', 'ลบรูปภาพเสร็จเรียบร้อย');
 	  redirect('admin/sell/edit_machine/' . $image->sell_id);
   }
   
   private function set_validation_rules() {
     $this->form_validation->set_rules('name','ประเภทรถ','trim|required');
+    $this->form_validation->set_rules('brand','ยี่ห้อ / รุ่น','trim|required');
     $this->form_validation->set_rules('price','ราคา','trim|required|is_natural');
     $this->form_validation->set_message('required', 'กรุณาใส่%s');
     $this->form_validation->set_message('is_natural', 'กรุณาใส่ตัวเลข%s (มากกว่าศูนย์) เท่านั้น');

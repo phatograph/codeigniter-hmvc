@@ -10,7 +10,7 @@
     <tr>
       <td class="alr"><?= $i + 1 ?></td>
       <td><?= $m->name ?></td>
-      <td><?= anchor('admin/rent/edit_machine/' . $m->id, 'แก้ไข') ?> | <?= anchor('admin/rent/delete_machine/' . $m->id, 'ลบ') ?></td>
+      <td><?= anchor('admin/rent/edit_machine/' . $m->id, 'แก้ไข') ?> | <?= anchor('admin/rent/delete_machine/' . $m->id, 'ลบ', 'onclick=\'return confirm("ยืนยันการลบ");\'') ?></td>
     </tr>
     <?php endforeach; ?>
   </table>
