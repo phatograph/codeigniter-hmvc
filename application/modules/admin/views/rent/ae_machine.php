@@ -48,9 +48,9 @@ else {
       <th class="with_fuel">รวมน้ำมัน</th>
       <th class="without_fuel">ไม่รวมน้ำมัน</th>
     </tr>
-  <?php foreach($sizes as $s) : ?>
+  <?php foreach($sizes as $i => $s) : ?>
     <tr>
-      <td class="alr"><?= $s->id ?></td>
+      <td class="alr"><?= $i + 1 ?></td>
       <td><?= $s->size ?></td>
       <td class="alr"><?= $s->price_daily_fuel ?></td>
       <td class="alr"><?= $s->price_daily ?></td>

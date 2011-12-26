@@ -15,11 +15,11 @@
 <div class="adminForm">
 <?php 
 if(isset($map->id)) {
-  echo '<h2 class="header">แก้ไขข้อมูลเครื่องจักร</h2>';
+  echo '<h2 class="header">แก้ไขข้อมูลติดต่อเรา</h2>';
   echo form_open('admin/contactus/edit_map_info_post/' . $map->id);
 }
 else {
-  echo '<h2 class="header">เพิ่มข้อมูลเครื่องจักรใหม่</h2>';
+  echo '<h2 class="header">เพิ่มข้อมูลติดต่อเรา</h2>';
   echo form_open('admin/contactus/add_map_post');
 }
 ?>
